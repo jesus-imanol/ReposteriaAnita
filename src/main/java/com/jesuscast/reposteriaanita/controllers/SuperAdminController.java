@@ -3,7 +3,7 @@ package com.jesuscast.reposteriaanita.controllers;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import com.jesuscast.reposteriaanita.Reposteria;
+import com.jesuscast.reposteriaanita.AppReposteria;
 import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -48,7 +48,7 @@ public class SuperAdminController {
 
     @FXML
     void onClickProductos(MouseEvent event) {
-        Reposteria.newStage("productos-view","Productos");
+        AppReposteria.newStage("productos-view","Productos");
     }
 
     @FXML

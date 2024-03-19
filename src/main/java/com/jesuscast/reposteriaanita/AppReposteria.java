@@ -1,6 +1,5 @@
 package com.jesuscast.reposteriaanita;
 
-import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -9,14 +8,14 @@ import javafx.stage.Stage;
 import org.kordamp.bootstrapfx.BootstrapFX;
 
 import java.io.IOException;
-public class Reposteria extends javafx.application.Application {
+public class AppReposteria extends javafx.application.Application {
     private static Stage stageView;
     private static Stage stageRoot;
 
     @Override
     public void start(Stage stage) throws IOException {
         stageRoot = stage;
-        FXMLLoader fxmlLoader = new FXMLLoader(Reposteria.class.getResource("login-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(AppReposteria.class.getResource("login-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         scene.getStylesheets().add(BootstrapFX.bootstrapFXStylesheet());
         stage.setTitle("Login - Reposteria");
@@ -47,7 +46,7 @@ public class Reposteria extends javafx.application.Application {
     }
 
     private static Parent loadFXML(String fxml) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Reposteria.class.getResource(fxml + ".fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(AppReposteria.class.getResource(fxml + ".fxml"));
         return fxmlLoader.load();
     }
 

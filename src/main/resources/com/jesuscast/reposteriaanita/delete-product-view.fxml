@@ -39,7 +39,7 @@
             <Image url="@img/panadera.png" />
          </image>
       </ImageView>
-      <TextField fx:id="nameProductDeleteImage" layoutX="293.0" layoutY="203.0" onMouseClicked="#onClickNameProductDeleteImage" prefHeight="30.0" prefWidth="321.0" style="-fx-background-color: #85D9F0; -fx-border-color: black;" />
+      <TextField fx:id="nameProductDelete" layoutX="293.0" layoutY="203.0" prefHeight="30.0" prefWidth="321.0" style="-fx-background-color: #85D9F0; -fx-border-color: black;" />
       <Label layoutX="293.0" layoutY="184.0" text="Ingresa el nombre del producto que deseas eliminar: ">
          <font>
             <Font name="Montserrat Regular" size="12.0" />

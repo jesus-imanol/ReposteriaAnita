@@ -3,7 +3,7 @@ package com.jesuscast.reposteriaanita.controllers;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import com.jesuscast.reposteriaanita.Reposteria;
+import com.jesuscast.reposteriaanita.AppReposteria;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -28,7 +28,7 @@ public class LoginController {
 
     @FXML
     void onClickLoginBtn(MouseEvent event) {
-        Reposteria.newStage("home-view-admin","Home-Super Administrador");
+        AppReposteria.newStage("home-view-admin","Home-Super Administrador");
     }
 
     @FXML
