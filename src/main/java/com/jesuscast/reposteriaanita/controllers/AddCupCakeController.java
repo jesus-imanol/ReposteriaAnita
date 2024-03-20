@@ -3,7 +3,7 @@ package com.jesuscast.reposteriaanita.controllers;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import com.jesuscast.reposteriaanita.Reposteria;
+import com.jesuscast.reposteriaanita.AppReposteria;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
@@ -70,7 +70,7 @@ public class AddCupCakeController {
 
     @FXML
     void onClickExit(MouseEvent event) {
-        Reposteria.getStageView().close();
+        AppReposteria.getStageView().close();
     }
     private void addValidator(TextField field) {
         field.textProperty().addListener(new ChangeListener<String>() {
