@@ -3,7 +3,11 @@ package com.jesuscast.reposteriaanita.controllers;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+<<<<<<< HEAD
 import com.jesuscast.reposteriaanita.AppReposteria;
+=======
+import com.jesuscast.reposteriaanita.Reposteria;
+>>>>>>> origin/master
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -37,7 +41,11 @@ public class SeeProductsController {
 
     @FXML
     void onClickExitSee(MouseEvent event) {
+<<<<<<< HEAD
         AppReposteria.getStageView().close();
+=======
+        Reposteria.getStageView().close();
+>>>>>>> origin/master
     }
 
     @FXML

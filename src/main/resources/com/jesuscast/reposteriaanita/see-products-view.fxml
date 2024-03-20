@@ -9,7 +9,10 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" style="-fx-background-color: #9CECFA;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jesuscast.reposteriaanita.controllers.SeeProductsController">
    <children>
       <TableView fx:id="tableProductColumn" layoutY="68.0" prefHeight="343.0" prefWidth="640.0" style="-fx-background-color: #9CECFA;">

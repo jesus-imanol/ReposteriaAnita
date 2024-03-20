@@ -3,7 +3,7 @@ package com.jesuscast.reposteriaanita.controllers;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import com.jesuscast.reposteriaanita.AppReposteria;
+import com.jesuscast.reposteriaanita.Reposteria;
 import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -33,12 +33,12 @@ public class ProductoController {
 
     @FXML
     void onClickAddProduct(MouseEvent event) {
-        AppReposteria.newStage("add-products-view","Agregar productos");
+        Reposteria.newStage("add-products-view","Agregar productos");
     }
 
     @FXML
     void onClickDeleteProduct(MouseEvent event) {
-        AppReposteria.newStage("delete-product-view","Eliminar producto");
+        Reposteria.newStage("delete-product-view","Eliminar producto");
     }
 
     @FXML
@@ -48,7 +48,7 @@ public class ProductoController {
 
     @FXML
     void onClickSeeProduct(MouseEvent event) {
-        AppReposteria.newStage("see-products-view","Ver productos");
+
     }
 
     @FXML
