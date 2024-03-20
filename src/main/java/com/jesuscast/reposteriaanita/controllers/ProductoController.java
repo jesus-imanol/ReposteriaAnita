@@ -33,7 +33,7 @@ public class ProductoController {
 
     @FXML
     void onClickAddProduct(MouseEvent event) {
-        Reposteria.newStage("add-products-view","Agregar productos");
+        Reposteria.newStage("menu-products-view","Agregar productos");
     }
 
     @FXML
