@@ -1,8 +1,11 @@
 package com.jesuscast.reposteriaanita;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TextField;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import org.kordamp.bootstrapfx.BootstrapFX;
@@ -53,5 +56,17 @@ public class AppReposteria extends javafx.application.Application {
     public static void main(String[] args) {
         launch();
         System.exit(1);
+    }
+    public static void addValidator(TextField field) {
+        field.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (newValue.trim().isEmpty()) {
+                    field.setStyle("-fx-border-color: red ; -fx-border-width: 2px ;");
+                } else {
+                    field.setStyle("");
+                }
+            }
+        });
     }
 }

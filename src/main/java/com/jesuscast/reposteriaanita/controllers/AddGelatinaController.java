@@ -4,8 +4,6 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import com.jesuscast.reposteriaanita.AppReposteria;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
@@ -14,7 +12,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-public class AddCakeController {
+public class AddGelatinaController {
 
     @FXML
     private ResourceBundle resources;
@@ -29,12 +27,6 @@ public class AddCakeController {
     private TextField amountInput;
 
     @FXML
-    private TextField amountPersonInput;
-
-    @FXML
-    private TextField designInput;
-
-    @FXML
     private ImageView exitImage;
 
     @FXML
@@ -47,7 +39,7 @@ public class AddCakeController {
     private TextField priceInput;
 
     @FXML
-    private TextField stuffedInput;
+    private TextField sizeInput;
 
     @FXML
     private TextField typeInput;
@@ -58,8 +50,8 @@ public class AddCakeController {
                 idInput.getText().trim().isEmpty() ||
                 nameInput.getText().trim().isEmpty() ||
                 priceInput.getText().trim().isEmpty() ||
-                typeInput.getText().trim().isEmpty() ||amountPersonInput.getText().isEmpty()
-                || designInput.getText().isEmpty() || stuffedInput.getText().isEmpty()) {
+                typeInput.getText().trim().isEmpty() ||
+                sizeInput.getText().isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Se requieren datos");
             alert.setContentText("Por favor complete los campos");
@@ -73,18 +65,7 @@ public class AddCakeController {
             alert.showAndWait();
         }
     }
-    private void addValidator(TextField field) {
-        field.textProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                if (newValue.trim().isEmpty()) {
-                    field.setStyle("-fx-border-color: red ; -fx-border-width: 2px ;");
-                } else {
-                    field.setStyle("");
-                }
-            }
-        });
-    }
+
     @FXML
     void onClickExit(MouseEvent event) {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -93,14 +74,12 @@ public class AddCakeController {
 
     @FXML
     void initialize() {
-        addValidator(amountInput);
-        addValidator(amountPersonInput);
-        addValidator(priceInput);
-        addValidator(nameInput);
-        addValidator(idInput);
-        addValidator(typeInput);
-        addValidator(designInput);
-        addValidator(stuffedInput);
+        AppReposteria.addValidator(amountInput);
+        AppReposteria.addValidator(typeInput);
+        AppReposteria.addValidator(idInput);
+        AppReposteria.addValidator(nameInput);
+        AppReposteria.addValidator(sizeInput);
+        AppReposteria.addValidator(priceInput);
     }
 
 }

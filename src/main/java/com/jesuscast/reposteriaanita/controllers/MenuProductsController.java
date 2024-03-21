@@ -5,8 +5,10 @@ import java.util.ResourceBundle;
 
 import com.jesuscast.reposteriaanita.AppReposteria;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 public class MenuProductsController {
 
@@ -39,7 +41,7 @@ public class MenuProductsController {
 
     @FXML
     void onClickCarlota(MouseEvent event) {
-
+        AppReposteria.newStage("add-carlota-view","Agregar carlota");
     }
 
     @FXML
@@ -49,17 +51,18 @@ public class MenuProductsController {
 
     @FXML
     void onClickExit(MouseEvent event) {
-
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.close();
     }
 
     @FXML
     void onClickFlan(MouseEvent event) {
-
+        AppReposteria.newStage("add-flan-view","Agregar flan");
     }
 
     @FXML
     void onClickGelatina(MouseEvent event) {
-
+        AppReposteria.newStage("add-gelatina-view","Agregar gelatina");
     }
 
     @FXML
@@ -69,7 +72,7 @@ public class MenuProductsController {
 
     @FXML
     void onClickPostreFrutas(MouseEvent event) {
-        AppReposteria.getStageView().close();
+        AppReposteria.newStage("add-postreFrutas-view","Agregar postre de frutas");
     }
 
     @FXML

@@ -5,9 +5,11 @@ import java.util.ResourceBundle;
 
 import com.jesuscast.reposteriaanita.AppReposteria;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 public class SeeProductsController {
 
@@ -37,7 +39,8 @@ public class SeeProductsController {
 
     @FXML
     void onClickExitSee(MouseEvent event) {
-        AppReposteria.getStageView().close();
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.close();
     }
 
     @FXML
