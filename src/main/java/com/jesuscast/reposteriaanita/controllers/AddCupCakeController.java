@@ -35,9 +35,6 @@ public class AddCupCakeController {
     private ImageView exitImage;
 
     @FXML
-    private TextField idInput;
-
-    @FXML
     private TextField nameInput;
 
     @FXML
@@ -52,7 +49,6 @@ public class AddCupCakeController {
     @FXML
     void onClickAddProduct(MouseEvent event) {
         if (amountInput.getText().trim().isEmpty() ||
-                idInput.getText().trim().isEmpty() ||
                 nameInput.getText().trim().isEmpty() ||
                 priceInput.getText().trim().isEmpty() ||
                 typeInput.getText().trim().isEmpty() || designInput.getText().isEmpty() || stuffedInput.getText().isEmpty()) {
@@ -92,7 +88,6 @@ public class AddCupCakeController {
         addValidator(amountInput);
         addValidator(priceInput);
         addValidator(nameInput);
-        addValidator(idInput);
         addValidator(typeInput);
         addValidator(designInput);
         addValidator(stuffedInput);

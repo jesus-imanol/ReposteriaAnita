@@ -31,8 +31,6 @@ public class AddCarlotaController {
     @FXML
     private ImageView exitImage;
 
-    @FXML
-    private TextField idInput;
 
     @FXML
     private TextField nameInput;
@@ -48,8 +46,7 @@ public class AddCarlotaController {
 
     @FXML
     void onClickAddProduct(MouseEvent event) {
-        if (amountInput.getText().trim().isEmpty() ||
-                idInput.getText().trim().isEmpty() ||
+        if (amountInput.getText().trim().isEmpty()||
                 nameInput.getText().trim().isEmpty() ||
                 priceInput.getText().trim().isEmpty() ||
                 typeInput.getText().trim().isEmpty() || sizeInput.getText().isEmpty()) {
@@ -88,7 +85,6 @@ public class AddCarlotaController {
     @FXML
     void initialize() {
         addValidator(amountInput);
-        addValidator(idInput);
         addValidator(nameInput);
         addValidator(typeInput);
         addValidator(sizeInput);

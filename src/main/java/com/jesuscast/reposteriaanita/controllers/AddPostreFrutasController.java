@@ -29,8 +29,6 @@ public class AddPostreFrutasController {
     @FXML
     private ImageView exitImage;
 
-    @FXML
-    private TextField idInput;
 
     @FXML
     private TextField nameInput;
@@ -44,7 +42,6 @@ public class AddPostreFrutasController {
     @FXML
     void onClickAddProduct(MouseEvent event) {
         if (amountInput.getText().trim().isEmpty() ||
-                idInput.getText().trim().isEmpty() ||
                 nameInput.getText().trim().isEmpty() ||
                 priceInput.getText().trim().isEmpty() ||
                 sizeInput.getText().isEmpty()) {
@@ -72,7 +69,6 @@ public class AddPostreFrutasController {
     void initialize() {
         AppReposteria.addValidator(amountInput);
         AppReposteria.addValidator(sizeInput);
-        AppReposteria.addValidator(idInput);
         AppReposteria.addValidator(nameInput);
         AppReposteria.addValidator(priceInput);
     }

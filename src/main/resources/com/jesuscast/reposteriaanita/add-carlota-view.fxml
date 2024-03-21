@@ -17,7 +17,7 @@
                   <Font name="Montserrat ExtraBold" size="36.0" />
                </font>
             </Label>
-            <ImageView fitHeight="69.0" fitWidth="79.0" layoutX="14.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="146.0" fitWidth="294.0" layoutX="14.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@img/panadera.png" />
                </image>
@@ -33,41 +33,35 @@
             </Label>
          </children>
       </Pane>
-      <ImageView fitHeight="114.0" fitWidth="143.0" layoutX="129.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="146.0" fitWidth="183.0" layoutX="89.0" layoutY="334.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@img/carlota.jpg.png" />
          </image>
       </ImageView>
-      <TextField fx:id="idInput" layoutX="38.0" layoutY="182.0" prefHeight="32.0" prefWidth="263.0" style="-fx-background-color: #85D9F0; -fx-border-color: black;" />
-      <TextField fx:id="amountInput" layoutX="39.0" layoutY="291.0" prefHeight="32.0" prefWidth="263.0" style="-fx-background-color: #85D9F0; -fx-border-color: black;" />
-      <TextField fx:id="typeInput" layoutX="40.0" layoutY="343.0" prefHeight="32.0" prefWidth="263.0" style="-fx-background-color: #85D9F0; -fx-border-color: black;" />
-      <TextField fx:id="priceInput" layoutX="40.0" layoutY="395.0" prefHeight="32.0" prefWidth="263.0" style="-fx-background-color: #85D9F0; -fx-border-color: black;" />
-      <Label layoutX="40.0" layoutY="216.0" prefHeight="17.0" prefWidth="143.0" text="Nombre">
+      <TextField fx:id="amountInput" layoutX="39.0" layoutY="238.0" prefHeight="32.0" prefWidth="263.0" style="-fx-background-color: #85D9F0; -fx-border-color: black;" />
+      <TextField fx:id="typeInput" layoutX="40.0" layoutY="290.0" prefHeight="32.0" prefWidth="263.0" style="-fx-background-color: #85D9F0; -fx-border-color: black;" />
+      <TextField fx:id="priceInput" layoutX="363.0" layoutY="240.0" prefHeight="32.0" prefWidth="263.0" style="-fx-background-color: #85D9F0; -fx-border-color: black;" />
+      <Label layoutX="40.0" layoutY="163.0" prefHeight="17.0" prefWidth="143.0" text="Nombre">
          <font>
             <Font name="Montserrat Regular" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="40.0" layoutY="275.0" prefHeight="17.0" prefWidth="143.0" text="Cantidad">
+      <Label layoutX="40.0" layoutY="222.0" prefHeight="17.0" prefWidth="143.0" text="Cantidad">
          <font>
             <Font name="Montserrat Regular" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="41.0" layoutY="328.0" prefHeight="17.0" prefWidth="143.0" text="Tipo">
+      <Label layoutX="41.0" layoutY="275.0" prefHeight="17.0" prefWidth="143.0" text="Tipo">
          <font>
             <Font name="Montserrat Regular" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="41.0" layoutY="380.0" prefHeight="17.0" prefWidth="143.0" text="Precio">
+      <Label layoutX="364.0" layoutY="225.0" prefHeight="17.0" prefWidth="143.0" text="Precio">
          <font>
             <Font name="Montserrat Regular" size="12.0" />
          </font>
       </Label>
-      <TextField fx:id="nameInput" layoutX="38.0" layoutY="233.0" prefHeight="32.0" prefWidth="263.0" style="-fx-background-color: #85D9F0; -fx-border-color: black;" />
-      <Label layoutX="41.0" layoutY="160.0" prefHeight="17.0" prefWidth="143.0" text="ID Carlota">
-         <font>
-            <Font name="Montserrat Regular" size="12.0" />
-         </font>
-      </Label>
+      <TextField fx:id="nameInput" layoutX="38.0" layoutY="180.0" prefHeight="32.0" prefWidth="263.0" style="-fx-background-color: #85D9F0; -fx-border-color: black;" />
       <TextField fx:id="sizeInput" layoutX="363.0" layoutY="181.0" prefHeight="32.0" prefWidth="263.0" style="-fx-background-color: #85D9F0; -fx-border-color: black;" />
       <Label layoutX="364.0" layoutY="166.0" prefHeight="17.0" prefWidth="143.0" text="Tamaño">
          <font>

@@ -35,8 +35,6 @@ public class AddFlanController {
     @FXML
     private ImageView exitImage;
 
-    @FXML
-    private TextField idInput;
 
     @FXML
     private TextField nameInput;
@@ -47,7 +45,6 @@ public class AddFlanController {
     @FXML
     void onClickAddProduct(MouseEvent event) {
         if (amountInput.getText().trim().isEmpty() ||
-                idInput.getText().trim().isEmpty() ||
                 nameInput.getText().trim().isEmpty() ||
                 priceInput.getText().trim().isEmpty() || designInput.getText().isEmpty() ||
                 amountPersonInput.getText().isEmpty()) {
@@ -76,7 +73,6 @@ public class AddFlanController {
         AppReposteria.addValidator(amountInput);
         AppReposteria.addValidator(amountPersonInput);
         AppReposteria.addValidator(designInput);
-        AppReposteria.addValidator(idInput);
         AppReposteria.addValidator(nameInput);
         AppReposteria.addValidator(priceInput);
     }

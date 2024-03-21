@@ -30,9 +30,6 @@ public class AddGelatinaController {
     private ImageView exitImage;
 
     @FXML
-    private TextField idInput;
-
-    @FXML
     private TextField nameInput;
 
     @FXML
@@ -47,7 +44,6 @@ public class AddGelatinaController {
     @FXML
     void onClickAddProduct(MouseEvent event) {
         if (amountInput.getText().trim().isEmpty() ||
-                idInput.getText().trim().isEmpty() ||
                 nameInput.getText().trim().isEmpty() ||
                 priceInput.getText().trim().isEmpty() ||
                 typeInput.getText().trim().isEmpty() ||
@@ -76,7 +72,6 @@ public class AddGelatinaController {
     void initialize() {
         AppReposteria.addValidator(amountInput);
         AppReposteria.addValidator(typeInput);
-        AppReposteria.addValidator(idInput);
         AppReposteria.addValidator(nameInput);
         AppReposteria.addValidator(sizeInput);
         AppReposteria.addValidator(priceInput);

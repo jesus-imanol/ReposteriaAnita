@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" style="-fx-background-color: #9CECFA;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jesuscast.reposteriaanita.controllers.AddCakeController">
    <children>
       <Pane layoutY="-1.0" prefHeight="79.0" prefWidth="640.0" style="-fx-background-color: #48A7FA;">
@@ -18,9 +17,9 @@
                   <Font name="Montserrat ExtraBold" size="36.0" />
                </font>
             </Label>
-            <ImageView fitHeight="69.0" fitWidth="79.0" layoutX="100.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="142.0" fitWidth="116.0" layoutX="91.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@img/decoracion.png" />
+                  <Image url="@img/panadera.png" />
                </image>
             </ImageView>
          </children>
@@ -34,41 +33,35 @@
             </Label>
          </children>
       </Pane>
-      <ImageView fitHeight="142.0" fitWidth="116.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="97.0" fitWidth="105.0" layoutX="123.0" layoutY="375.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@img/pasteel.png" />
          </image>
       </ImageView>
-      <TextField fx:id="idInput" layoutX="38.0" layoutY="182.0" prefHeight="32.0" prefWidth="263.0" style="-fx-background-color: #85D9F0; -fx-border-color: black;" />
-      <TextField fx:id="amountInput" layoutX="39.0" layoutY="291.0" prefHeight="32.0" prefWidth="263.0" style="-fx-background-color: #85D9F0; -fx-border-color: black;" />
-      <TextField fx:id="typeInput" layoutX="40.0" layoutY="343.0" prefHeight="32.0" prefWidth="263.0" style="-fx-background-color: #85D9F0; -fx-border-color: black;" />
-      <TextField fx:id="priceInput" layoutX="40.0" layoutY="395.0" prefHeight="32.0" prefWidth="263.0" style="-fx-background-color: #85D9F0; -fx-border-color: black;" />
-      <Label layoutX="40.0" layoutY="216.0" prefHeight="17.0" prefWidth="143.0" text="Nombre">
+      <TextField fx:id="amountInput" layoutX="39.0" layoutY="238.0" prefHeight="32.0" prefWidth="263.0" style="-fx-background-color: #85D9F0; -fx-border-color: black;" />
+      <TextField fx:id="typeInput" layoutX="40.0" layoutY="290.0" prefHeight="32.0" prefWidth="263.0" style="-fx-background-color: #85D9F0; -fx-border-color: black;" />
+      <TextField fx:id="priceInput" layoutX="40.0" layoutY="342.0" prefHeight="32.0" prefWidth="263.0" style="-fx-background-color: #85D9F0; -fx-border-color: black;" />
+      <Label layoutX="40.0" layoutY="163.0" prefHeight="17.0" prefWidth="143.0" text="Nombre">
          <font>
             <Font name="Montserrat Regular" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="40.0" layoutY="275.0" prefHeight="17.0" prefWidth="143.0" text="Cantidad">
+      <Label layoutX="40.0" layoutY="222.0" prefHeight="17.0" prefWidth="143.0" text="Cantidad">
          <font>
             <Font name="Montserrat Regular" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="41.0" layoutY="328.0" prefHeight="17.0" prefWidth="143.0" text="Tipo">
+      <Label layoutX="41.0" layoutY="275.0" prefHeight="17.0" prefWidth="143.0" text="Tipo">
          <font>
             <Font name="Montserrat Regular" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="41.0" layoutY="380.0" prefHeight="17.0" prefWidth="143.0" text="Precio">
+      <Label layoutX="41.0" layoutY="327.0" prefHeight="17.0" prefWidth="143.0" text="Precio">
          <font>
             <Font name="Montserrat Regular" size="12.0" />
          </font>
       </Label>
-      <TextField fx:id="nameInput" layoutX="38.0" layoutY="233.0" prefHeight="32.0" prefWidth="263.0" style="-fx-background-color: #85D9F0; -fx-border-color: black;" />
-      <Label layoutX="41.0" layoutY="160.0" prefHeight="17.0" prefWidth="143.0" text="ID Pastel">
-         <font>
-            <Font name="Montserrat Regular" size="12.0" />
-         </font>
-      </Label>
+      <TextField fx:id="nameInput" layoutX="38.0" layoutY="180.0" prefHeight="32.0" prefWidth="263.0" style="-fx-background-color: #85D9F0; -fx-border-color: black;" />
       <TextField fx:id="amountPersonInput" layoutX="363.0" layoutY="182.0" prefHeight="32.0" prefWidth="263.0" style="-fx-background-color: #85D9F0; -fx-border-color: black;" />
       <TextField fx:id="stuffedInput" layoutX="363.0" layoutY="234.0" prefHeight="32.0" prefWidth="263.0" style="-fx-background-color: #85D9F0; -fx-border-color: black;" />
       <Label layoutX="364.0" layoutY="167.0" prefHeight="17.0" prefWidth="143.0" text="Cantidad de personas">
