@@ -4,6 +4,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import com.jesuscast.reposteriaanita.AppReposteria;
+import com.jesuscast.reposteriaanita.models.Carlota;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
@@ -57,7 +58,35 @@ public class AddCarlotaController {
         }
         //Somer aqui agregaras el producto
         else {
-           
+           String nombre=nameInput.getText();
+           String tipo=typeInput.getText();
+           String size=sizeInput.getText();
+           int cantidad;
+           double precio;
+           try{
+               cantidad=Integer.parseInt(amountInput.getText());
+               precio=Double.parseDouble(priceInput.getText());
+               Carlota carlota=new Carlota(nombre, cantidad, precio, size, tipo);
+               if (AppReposteria.getReposteria().addCarlota(carlota)){
+                   Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                   alert.setTitle("Exito");
+                   alert.setContentText("Guardado exitosamente");
+                   alert.showAndWait();
+               }
+               else {
+                   Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                   alert.setTitle("Error");
+                   alert.setContentText("Ha habido un error al guardar, intente de nuevo, por favor");
+                   alert.showAndWait();
+               }
+
+           }
+           catch (Exception e){
+               Alert alert = new Alert(Alert.AlertType.INFORMATION);
+               alert.setTitle("Error");
+               alert.setContentText("Error al guardar datos, ingrese solo valores númericos"+e.getMessage());
+               alert.showAndWait();
+           }
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Datos");
             alert.setContentText("Datos guardados correctamente");
