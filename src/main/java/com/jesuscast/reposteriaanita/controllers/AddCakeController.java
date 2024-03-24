@@ -93,10 +93,6 @@ public class AddCakeController {
               alert.setContentText("Se requieran valor númericos, no caracteres"+e.getMessage());
               alert.showAndWait();
           }
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Datos");
-            alert.setContentText("Datos guardados correctamente");
-            alert.showAndWait();
         }
     }
     private void addValidator(TextField field) {
