@@ -4,6 +4,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import com.jesuscast.reposteriaanita.AppReposteria;
+import com.jesuscast.reposteriaanita.models.Cupcake;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
@@ -59,7 +60,34 @@ public class AddCupCakeController {
         }
         //Somer aqui agregaras el producto
         else {
-
+        String nombre = nameInput.getText();
+        String relleno = stuffedInput.getText();
+        String desing = designInput.getText();
+        int cantidad;
+        double precio;
+        try {
+            cantidad = Integer.parseInt(amountInput.getText());
+            precio=Double.parseDouble(priceInput.getText());
+            Cupcake cupcake = new Cupcake(nombre, cantidad, precio, relleno, desing);
+            if (AppReposteria.getReposteria().addCupcake(cupcake)){
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Exito");
+                alert.setContentText("Guardado exitosamente");
+                alert.showAndWait();
+            }
+            else {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Error");
+                alert.setContentText("Ha habido un error al guardar, intente de nuevo, por favor");
+                alert.showAndWait();
+            }
+        }
+        catch (Exception e){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Error");
+            alert.setContentText("Error al guardar datos, ingrese solo valores númericos"+e.getMessage());
+            alert.showAndWait();
+        }
         }
     }
 

@@ -4,7 +4,7 @@ public class Cupcake extends Producto {
     private String relleno;
     private String desing;
     public Cupcake(){}
-    public Cupcake(String nombreProducto, int cantidad, int precio, String relleno, String desing) {
+    public Cupcake(String nombreProducto, int cantidad, double precio, String relleno, String desing) {
         super(nombreProducto, cantidad, precio);
         this.relleno = relleno;
         this.desing = desing;

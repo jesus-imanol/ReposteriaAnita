@@ -4,6 +4,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import com.jesuscast.reposteriaanita.AppReposteria;
+import com.jesuscast.reposteriaanita.models.Flan;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
@@ -55,7 +56,35 @@ public class AddFlanController {
         }
         //Somer aqui agregaras el producto
         else {
-
+          String nombre=nameInput.getText();
+          String desing = designInput.getText();
+          int cantidad;
+          double precio;
+          int cantidadPersonas;
+          try {
+              cantidad=Integer.parseInt(amountInput.getText());
+              precio=Double.parseDouble(priceInput.getText());
+              cantidadPersonas=Integer.parseInt(amountPersonInput.getText());
+              Flan flan = new Flan(nombre, cantidad, precio, cantidadPersonas, desing);
+              if (AppReposteria.getReposteria().addFlan(flan)){
+                  Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                  alert.setTitle("Exito");
+                  alert.setContentText("Guardado exitosamente");
+                  alert.showAndWait();
+              }
+              else {
+                  Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                  alert.setTitle("Error");
+                  alert.setContentText("Ha habido un error al guardar, intente de nuevo, por favor");
+                  alert.showAndWait();
+              }
+          }
+          catch (Exception e){
+              Alert alert = new Alert(Alert.AlertType.INFORMATION);
+              alert.setTitle("Error");
+              alert.setContentText("Error al guardar datos, ingrese solo valores númericos"+e.getMessage());
+              alert.showAndWait();
+          }
         }
     }
 

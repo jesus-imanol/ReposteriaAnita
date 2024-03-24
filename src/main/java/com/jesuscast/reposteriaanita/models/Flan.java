@@ -5,7 +5,7 @@ public class Flan extends Producto {
     private String desing;
     public Flan(){}
 
-    public Flan(String nombreProducto, int cantidad, int precio, int cantidadPersonas, String desing) {
+    public Flan(String nombreProducto, int cantidad, double precio, int cantidadPersonas, String desing) {
         super(nombreProducto, cantidad, precio);
         this.cantidadPersonas = cantidadPersonas;
         this.desing = desing;
