@@ -4,6 +4,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import com.jesuscast.reposteriaanita.AppReposteria;
+import com.jesuscast.reposteriaanita.models.Pastel;
+import com.jesuscast.reposteriaanita.models.Reposteria;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
@@ -15,7 +17,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 public class AddCakeController {
-
     @FXML
     private ResourceBundle resources;
 
@@ -64,6 +65,34 @@ public class AddCakeController {
         }
         //Somer aqui agregaras el producto
         else {
+          String nombre = nameInput.getText();
+            String relleno=stuffedInput.getText();
+            String desing=designInput.getText();
+          try {
+              int cantidad = Integer.parseInt(amountInput.getText());
+              double precio = Double.parseDouble(priceInput.getText());
+              int cantidadPersonas = Integer.parseInt(amountPersonInput.getText());
+              Pastel pastel = new Pastel(nombre,cantidad, precio, cantidadPersonas,relleno,desing);
+
+              if (AppReposteria.getReposteria().addPastel(pastel)){
+                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                 alert.setTitle("Exito");
+                 alert.setContentText("Pedido agregado con éxito");
+                 alert.showAndWait();
+              }
+              else {
+                  Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                  alert.setTitle("Error");
+                  alert.setContentText("Fallo al guardar, por favor intente de nuevo");
+                  alert.showAndWait();
+              }
+          }
+          catch (Exception e){
+              Alert alert = new Alert(Alert.AlertType.INFORMATION);
+              alert.setTitle("Error al guardar datos");
+              alert.setContentText("Se requieran valor númericos, no caracteres"+e.getMessage());
+              alert.showAndWait();
+          }
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Datos");
             alert.setContentText("Datos guardados correctamente");

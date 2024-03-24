@@ -57,6 +57,7 @@ public class AddCarlotaController {
         }
         //Somer aqui agregaras el producto
         else {
+           
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Datos");
             alert.setContentText("Datos guardados correctamente");

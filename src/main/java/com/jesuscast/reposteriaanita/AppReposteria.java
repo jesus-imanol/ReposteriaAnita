@@ -1,5 +1,6 @@
 package com.jesuscast.reposteriaanita;
 
+import com.jesuscast.reposteriaanita.models.Reposteria;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXMLLoader;
@@ -12,6 +13,12 @@ import org.kordamp.bootstrapfx.BootstrapFX;
 
 import java.io.IOException;
 public class AppReposteria extends javafx.application.Application {
+    private static Reposteria reposteria = new Reposteria();
+
+    public static Reposteria getReposteria() {
+        return reposteria;
+    }
+
     private static Stage stageView;
     private static Stage stageRoot;
 

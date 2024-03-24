@@ -7,7 +7,7 @@ public class Producto {
     protected double precio;
     public Producto(){}
 
-    public Producto(String nombreProducto, int cantidad, int precio) {
+    public Producto(String nombreProducto, int cantidad, double precio) {
         this.id =(int)(Math.random()*899+100);
         this.nombreProducto = nombreProducto;
         this.cantidad = cantidad;
