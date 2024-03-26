@@ -4,6 +4,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import com.jesuscast.reposteriaanita.AppReposteria;
+import com.jesuscast.reposteriaanita.models.PostreFrutas;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
@@ -52,7 +53,33 @@ public class AddPostreFrutasController {
         }
         //Somer aqui agregaras el producto
         else {
-
+          String nombre = nameInput.getText();
+          String size = sizeInput.getText();
+          int cantidad;
+          double precio;
+          try {
+              cantidad = Integer.parseInt(amountInput.getText());
+              precio = Double.parseDouble(priceInput.getText());
+              PostreFrutas postreFrutas = new PostreFrutas(nombre,cantidad,precio,size);
+              if (AppReposteria.getReposteria().addPostreFrutas(postreFrutas)){
+                  Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                  alert.setTitle("Exito");
+                  alert.setContentText("Guardado exitosamente");
+                  alert.showAndWait();
+              }
+              else {
+                  Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                  alert.setTitle("Error");
+                  alert.setContentText("Ha habido un error al guardar, intente de nuevo, por favor");
+                  alert.showAndWait();
+              }
+          }
+          catch (Exception e){
+              Alert alert = new Alert(Alert.AlertType.INFORMATION);
+              alert.setTitle("Error");
+              alert.setContentText("Error al guardar datos, ingrese solo valores númericos"+e.getMessage());
+              alert.showAndWait();
+          }
         }
     }
 

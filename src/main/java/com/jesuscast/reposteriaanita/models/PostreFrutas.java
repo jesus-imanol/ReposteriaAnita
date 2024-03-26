@@ -4,7 +4,7 @@ public class PostreFrutas extends Producto {
     private String desing;
     public PostreFrutas(){}
 
-    public PostreFrutas(String nombreProducto, int cantidad, int precio, String desing) {
+    public PostreFrutas(String nombreProducto, int cantidad, double precio, String desing) {
         super(nombreProducto, cantidad, precio);
         this.desing = desing;
     }
