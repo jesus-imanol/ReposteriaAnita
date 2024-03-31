@@ -7,48 +7,53 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" style="-fx-background-color: #9CECFA;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jesuscast.reposteriaanita.controllers.SuperAdminController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1280.0" style="-fx-background-color: #9CECFA;" stylesheets="@styleForHome.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jesuscast.reposteriaanita.controllers.SuperAdminController">
    <children>
-      <ImageView fx:id="productosImage" fitHeight="213.0" fitWidth="107.0" layoutX="27.0" layoutY="148.0" onMouseClicked="#onClickProductos" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="productosImage" fitHeight="290.0" fitWidth="250.0" layoutX="13.0" layoutY="195.0" onMouseClicked="#onClickProductos" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@img/productos.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="clientesImage" fitHeight="128.0" fitWidth="107.0" layoutX="142.0" layoutY="150.0" onMouseClicked="#onClickClientes" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="clientesImage" fitHeight="297.0" fitWidth="257.0" layoutX="266.0" layoutY="194.0" onMouseClicked="#onClickClientes" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@img/clientes.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="insumosImage" fitHeight="128.0" fitWidth="107.0" layoutX="255.0" layoutY="150.0" onMouseClicked="#onClickInsumos" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="insumosImage" fitHeight="299.0" fitWidth="268.0" layoutX="518.0" layoutY="192.0" onMouseClicked="#onClickInsumos" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@img/insumos.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="ventasImage" fitHeight="130.0" fitWidth="107.0" layoutX="370.0" layoutY="151.0" onMouseClicked="#onClickVentas" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="ventasImage" fitHeight="288.0" fitWidth="268.0" layoutX="775.0" layoutY="196.0" onMouseClicked="#onClickVentas" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@img/ventas.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="pedidosImage" fitHeight="130.0" fitWidth="107.0" layoutX="485.0" layoutY="152.0" onMouseClicked="#onClickPedidos" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="pedidosImage" fitHeight="300.0" fitWidth="268.0" layoutX="1028.0" layoutY="187.0" onMouseClicked="#onClickPedidos" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@img/pedidos.png" />
          </image>
       </ImageView>
-      <Pane prefHeight="81.0" prefWidth="640.0" style="-fx-background-color: #48A7FA;">
+      <Pane prefHeight="81.0" prefWidth="1282.0" style="-fx-background-color: #48A7FA;">
          <children>
-            <Label layoutX="138.0" layoutY="18.0" prefHeight="45.0" prefWidth="395.0" text="Bienvenido usuario ">
+            <Label layoutX="1.0" layoutY="69.0" prefHeight="85.0" prefWidth="535.0" text="¿Qué haremos hoy?" textFill="#009e20">
                <font>
-                  <Font name="Montserrat ExtraBold" size="36.0" />
+                  <Font name="Montserrat ExtraBold" size="48.0" />
+               </font>
+            </Label>
+            <Label layoutX="373.0" prefHeight="85.0" prefWidth="535.0" text="Bienvenido usuario">
+               <font>
+                  <Font name="Montserrat ExtraBold" size="48.0" />
                </font>
             </Label>
          </children>
       </Pane>
-      <Label layoutX="27.0" layoutY="90.0" text="¿Qué haremos hoy?" textFill="#009e20">
+      <Label layoutX="1.0" layoutY="69.0" prefHeight="85.0" prefWidth="535.0" text="¿Qué haremos hoy?" textFill="#009e20">
          <font>
-            <Font name="Montserrat ExtraBold" size="24.0" />
+            <Font name="Montserrat ExtraBold" size="48.0" />
          </font>
       </Label>
-      <ImageView fitHeight="72.0" fitWidth="77.0" layoutX="539.0" layoutY="394.0" onMouseClicked="#onClickSalir" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="110.0" fitWidth="112.0" layoutX="1127.0" layoutY="570.0" onMouseClicked="#onClickSalir" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@img/salida.png" />
          </image>

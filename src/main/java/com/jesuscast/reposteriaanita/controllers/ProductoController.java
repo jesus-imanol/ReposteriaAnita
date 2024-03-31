@@ -51,7 +51,7 @@ public class ProductoController {
 
     @FXML
     void onClickSeeProduct(MouseEvent event) {
-
+        AppReposteria.newStage("menu-see-products","Ver");
     }
 
     @FXML

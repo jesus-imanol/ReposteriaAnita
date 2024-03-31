@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1280.0" style="-fx-background-color: #33DC69;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane layoutY="-4.0" prefHeight="150.0" prefWidth="1284.0" style="-fx-background-color: #4BDFD9;">
+         <children>
+            <Label layoutX="424.0" layoutY="21.0" text="Editar producto">
+               <font>
+                  <Font size="64.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="192.0" fitWidth="196.0" layoutX="204.0" layoutY="-21.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/decoracion.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutX="490.0" layoutY="146.0" prefHeight="124.0" prefWidth="792.0" style="-fx-background-color: #6DC4C0;">
+         <children>
+            <Label layoutX="138.0" layoutY="13.0" text="¿Qué deseas editar?">
+               <font>
+                  <Font size="64.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="192.0" fitWidth="196.0" layoutX="-94.0" layoutY="-46.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/panadera.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <TextField layoutX="106.0" layoutY="348.0" prefHeight="31.0" prefWidth="283.0" />
+      <TextField layoutX="109.0" layoutY="412.0" prefHeight="31.0" prefWidth="283.0" />
+   </children>
+</AnchorPane>
