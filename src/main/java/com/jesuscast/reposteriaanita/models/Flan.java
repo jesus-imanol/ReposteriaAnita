@@ -3,9 +3,7 @@ package com.jesuscast.reposteriaanita.models;
 public class Flan extends Producto {
     private int cantidadPersonas;
     private String desing;
-    public Flan(){}
-
-    public Flan(String nombreProducto, int cantidad, double precio, int cantidadPersonas, String desing) {
+    public Flan(String nombreProducto, int cantidad, double precio,int cantidadPersonas, String desing) {
         super(nombreProducto, cantidad, precio);
         this.cantidadPersonas = cantidadPersonas;
         this.desing = desing;

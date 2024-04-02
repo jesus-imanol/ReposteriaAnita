@@ -1,5 +1,7 @@
 package com.jesuscast.reposteriaanita.models;
 
+import com.jesuscast.reposteriaanita.AppReposteria;
+
 import java.util.ArrayList;
 
 public class Reposteria {
@@ -119,5 +121,52 @@ public class Reposteria {
 
         public void setListaInsumos(ArrayList<Insumo> listaInsumos) {
                 this.listaInsumos = listaInsumos;
+        }
+        public boolean eliminarProducto(String id){
+                boolean encontrado=false;
+                boolean status;
+                for (short i = 0; i<listaProductosPostreFrutas.size(); i++){
+                   if (listaProductosPostreFrutas.get(i).getId().equals(id)){
+                           status = false;
+                           listaProductosPostreFrutas.get(i).setStatus(status);
+                           encontrado = true;
+                   }
+                }
+                for (short i = 0; i<listaProductosCupcake.size(); i++){
+                        if (listaProductosCupcake.get(i).getId().equals(id)){
+                                status = false;
+                                listaProductosCupcake.get(i).setStatus(status);
+                                encontrado = true;
+                        }
+                }
+                for (short i = 0; i<listaProductosCarlota.size(); i++){
+                        if (listaProductosCarlota.get(i).getId().equals(id)){
+                                status = false;
+                                listaProductosCarlota.get(i).setStatus(status);
+                                encontrado = true;
+                        }
+                }
+                for (short i = 0; i<listaProductosFlan.size(); i++){
+                        if (listaProductosFlan.get(i).getId().equals(id)){
+                                status = false;
+                                listaProductosFlan.get(i).setStatus(status);
+                                encontrado = true;
+                        }
+                }
+                for (short i = 0; i<listaProductosPastel.size(); i++){
+                        if (listaProductosPastel.get(i).getId().equals(id)){
+                                status = false;
+                                listaProductosPastel.get(i).setStatus(status);
+                                encontrado = true;
+                        }
+                }
+                for (short i = 0; i<listaProductosGelatina.size(); i++){
+                        if (listaProductosGelatina.get(i).getId().equals(id)){
+                                status = false;
+                                listaProductosGelatina.get(i).setStatus(status);
+                                encontrado = true;
+                        }
+                }
+                return encontrado;
         }
 }

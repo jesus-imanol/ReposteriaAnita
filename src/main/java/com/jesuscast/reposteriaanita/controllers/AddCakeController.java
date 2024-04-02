@@ -63,7 +63,6 @@ public class AddCakeController {
             alert.setContentText("Por favor complete los campos");
             alert.showAndWait();
         }
-        //Somer aqui agregaras el producto
         else {
           String nombre = nameInput.getText();
             String relleno=stuffedInput.getText();
@@ -72,7 +71,7 @@ public class AddCakeController {
               int cantidad = Integer.parseInt(amountInput.getText());
               double precio = Double.parseDouble(priceInput.getText());
               int cantidadPersonas = Integer.parseInt(amountPersonInput.getText());
-              Pastel pastel = new Pastel(nombre,cantidad, precio, cantidadPersonas,relleno,desing);
+              Pastel pastel = new Pastel(nombre,cantidad, precio,cantidadPersonas,relleno,desing);
 
               if (AppReposteria.getReposteria().addPastel(pastel)){
                  Alert alert = new Alert(Alert.AlertType.INFORMATION);

@@ -8,13 +8,13 @@ import java.time.LocalTime;
 public class PedidoADomicilio extends Pedido {
     private String nombreDomicilio;
     private double costoEnvio;
-    private String referncia;
+    private String referencia;
     public PedidoADomicilio(){}
-    public PedidoADomicilio(String nombreCliente, LocalDate fechaDePedido, LocalTime horaDePedido, String descripciónProducto, String productDesing, String status, String nombreDomicilio, double costoEnvio, String referncia) {
+    public PedidoADomicilio(String nombreCliente, LocalDate fechaDePedido, LocalTime horaDePedido, String descripciónProducto, String productDesing, String status, String nombreDomicilio, double costoEnvio, String referencia) {
         super(nombreCliente, fechaDePedido, horaDePedido, descripciónProducto, productDesing, status);
         this.nombreDomicilio = nombreDomicilio;
         this.costoEnvio = costoEnvio;
-        this.referncia = referncia;
+        this.referencia = referencia;
     }
 
     public String getNombreDomicilio() {
@@ -34,10 +34,10 @@ public class PedidoADomicilio extends Pedido {
     }
 
     public String getReferncia() {
-        return referncia;
+        return referencia;
     }
 
     public void setReferncia(String referncia) {
-        this.referncia = referncia;
+        this.referencia = referncia;
     }
 }

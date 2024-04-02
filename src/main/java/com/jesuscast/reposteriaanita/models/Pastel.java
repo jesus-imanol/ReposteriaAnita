@@ -4,8 +4,7 @@ public class Pastel extends Producto {
     private int cantidadPersonas;
     private String relleno;
     private String desing;
-    public Pastel(){}
-    public Pastel(String nombreProducto, int cantidad, double precio, int cantidadPersonas, String relleno, String desing) {
+    public Pastel(String nombreProducto, int cantidad, double precio,int cantidadPersonas, String relleno, String desing) {
         super(nombreProducto, cantidad, precio);
         this.cantidadPersonas = cantidadPersonas;
         this.relleno = relleno;

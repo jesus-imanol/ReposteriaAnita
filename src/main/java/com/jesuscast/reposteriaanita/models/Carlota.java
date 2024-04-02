@@ -3,8 +3,7 @@ package com.jesuscast.reposteriaanita.models;
 public class Carlota extends Producto {
     private String size;
     private String tipo;
-    public Carlota(){}
-    public Carlota(String nombreProducto, int cantidad, double precio, String size, String tipo) {
+    public Carlota(String nombreProducto, int cantidad, double precio,String size, String tipo) {
         super(nombreProducto, cantidad, precio);
         this.size=size;
         this.tipo = tipo;

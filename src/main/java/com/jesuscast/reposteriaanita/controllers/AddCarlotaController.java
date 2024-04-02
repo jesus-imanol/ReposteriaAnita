@@ -66,7 +66,7 @@ public class AddCarlotaController {
            try{
                cantidad=Integer.parseInt(amountInput.getText());
                precio=Double.parseDouble(priceInput.getText());
-               Carlota carlota=new Carlota(nombre, cantidad, precio, size, tipo);
+               Carlota carlota=new Carlota(nombre, cantidad, precio,size, tipo);
                if (AppReposteria.getReposteria().addCarlota(carlota)){
                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
                    alert.setTitle("Exito");

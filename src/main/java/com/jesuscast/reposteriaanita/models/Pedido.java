@@ -2,9 +2,10 @@ package com.jesuscast.reposteriaanita.models;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.UUID;
 
 public class Pedido {
-    protected int id;
+    protected String id;
     protected String nombreCliente;
     protected LocalDate fechaDePedido;
     protected LocalTime horaDePedido;
@@ -13,7 +14,7 @@ public class Pedido {
     protected String status;
     public Pedido(){}
     public Pedido(String nombreCliente, LocalDate fechaDePedido, LocalTime horaDePedido, String descripciónProducto, String productDesing, String status) {
-        this.id=(int)(Math.random()*899+100);
+        this.id= UUID.randomUUID().toString();
         this.nombreCliente = nombreCliente;
         this.fechaDePedido = fechaDePedido;
         this.horaDePedido = horaDePedido;
@@ -22,11 +23,11 @@ public class Pedido {
         this.status = status;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

@@ -68,7 +68,7 @@ public class AddCupCakeController {
         try {
             cantidad = Integer.parseInt(amountInput.getText());
             precio=Double.parseDouble(priceInput.getText());
-            Cupcake cupcake = new Cupcake(nombre, cantidad, precio, relleno, desing);
+            Cupcake cupcake = new Cupcake(nombre, cantidad, precio,relleno, desing);
             if (AppReposteria.getReposteria().addCupcake(cupcake)){
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Exito");

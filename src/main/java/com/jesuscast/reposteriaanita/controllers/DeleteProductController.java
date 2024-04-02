@@ -7,6 +7,7 @@ import com.jesuscast.reposteriaanita.AppReposteria;
 import com.jesuscast.reposteriaanita.models.Reposteria;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -41,9 +42,26 @@ public class DeleteProductController {
 
     @FXML
     void onClickNameProductDeleteImage(MouseEvent event) {
-
+        if (nameProductDeleteImage.getText().trim().isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Error");
+            alert.setContentText("Por favor ingrese una ID");
+        } else {
+            String id = nameProductDeleteImage.getText();
+           if (AppReposteria.getReposteria().eliminarProducto(id)){
+               Alert alert=new Alert(Alert.AlertType.INFORMATION);
+               alert.setTitle("Éxito");
+               alert.setContentText("Producto eliminado con éxito");
+               alert.showAndWait();
+           }
+           else {
+               Alert alert = new Alert(Alert.AlertType.INFORMATION);
+               alert.setTitle("Error");
+               alert.setContentText("No existe ningún producto con esta ID");
+               alert.showAndWait();
+           }
+        }
     }
-
     @FXML
     void initialize() {
 

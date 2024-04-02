@@ -1,19 +1,18 @@
 package com.jesuscast.reposteriaanita.models;
 
 public class PostreFrutas extends Producto {
-    private String desing;
-    public PostreFrutas(){}
+    private String size;
 
-    public PostreFrutas(String nombreProducto, int cantidad, double precio, String desing) {
+    public PostreFrutas(String nombreProducto, int cantidad, double precio, String size) {
         super(nombreProducto, cantidad, precio);
-        this.desing = desing;
+        this.size = size;
     }
 
     public String getDesing() {
-        return desing;
+        return size;
     }
 
     public void setDesing(String desing) {
-        this.desing = desing;
+        this.size = desing;
     }
 }

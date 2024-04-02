@@ -6,6 +6,7 @@ public class Cliente {
     private String direccion;
     private String sexo;
     private String tiempoCliente;
+    private boolean status;
     public Cliente(){}
 
     public Cliente(int id, String nombre, String direccion, String sexo, String tiempoCliente) {
@@ -14,6 +15,7 @@ public class Cliente {
         this.direccion = direccion;
         this.sexo = sexo;
         this.tiempoCliente = tiempoCliente;
+        this.status = true;
     }
 
     public int getId() {

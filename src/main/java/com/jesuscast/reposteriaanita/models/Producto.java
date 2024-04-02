@@ -1,21 +1,47 @@
 package com.jesuscast.reposteriaanita.models;
 
+import java.util.UUID;
+
 public class Producto {
-    protected int id;
+    protected String id;
     protected String nombreProducto;
     protected int cantidad;
     protected double precio;
-    public Producto(){}
-
+    private boolean status;
     public Producto(String nombreProducto, int cantidad, double precio) {
-        this.id =(int)(Math.random()*899+100);
+        this.id = UUID.randomUUID().toString();
         this.nombreProducto = nombreProducto;
         this.cantidad = cantidad;
         this.precio = precio;
+        this.status = true;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setNombreProducto(String nombreProducto) {
+        this.nombreProducto = nombreProducto;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
     }
 
     public String getNombreProducto() {

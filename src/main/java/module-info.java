@@ -6,6 +6,8 @@ module com.jesuscast.reposteriaanita {
     requires net.synedra.validatorfx;
     requires org.kordamp.bootstrapfx.core;
 
+
+    opens com.jesuscast.reposteriaanita.models to javafx.base;
     opens com.jesuscast.reposteriaanita to javafx.fxml;
     exports com.jesuscast.reposteriaanita;
     exports com.jesuscast.reposteriaanita.controllers;
