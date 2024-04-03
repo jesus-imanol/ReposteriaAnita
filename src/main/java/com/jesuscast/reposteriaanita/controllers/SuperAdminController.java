@@ -33,7 +33,7 @@ public class SuperAdminController {
 
     @FXML
     void onClickClientes(MouseEvent event) {
-
+        AppReposteria.newStage("clientes-view","Clientes");
     }
 
     @FXML
