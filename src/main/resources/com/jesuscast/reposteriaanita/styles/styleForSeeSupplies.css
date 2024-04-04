@@ -1,21 +1,6 @@
-
-label {
-    -fx-font-family: "Montserrat ExtraBold";
-    -fx-font-size: 48px;
-    -fx-text-fill: #333333;
+.decoration {
+    -fx-effect: dropshadow(three-pass-box, blue, 10, 0, 0, 0);
 }
-
-#welcomePane {
-    -fx-background-color: #48A7FA;
-}
-
-.image-view {
-    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0);
-}
-.image-view:hover {
-    -fx-effect: dropshadow(three-pass-box, red, 10, 0, 0, 0);
-}
-
 Button {
     -fx-background-color: #3B92EB;
     -fx-border-color: #FFFFFF;
@@ -37,4 +22,10 @@ Button:pressed {
     -fx-background-color: #FFFFFF;
     -fx-text-fill: #000000;
     -fx-font-weight: bold;
+}
+.labels-input {
+    -fx-font-family: "Montserrat ExtraBold",sans-serif;
+    -fx-font-size: 36px;
+    -fx-text-fill: #333333;
+    -fx-font-style: bold;
 }

@@ -38,12 +38,12 @@ public class SuperAdminController {
 
     @FXML
     void onClickInsumos(MouseEvent event) {
-
+        AppReposteria.newStage("insumos-view","Insumos");
     }
 
     @FXML
     void onClickPedidos(MouseEvent event) {
-
+        AppReposteria.newStage("pedidos-view","Pedidos");
     }
 
     @FXML

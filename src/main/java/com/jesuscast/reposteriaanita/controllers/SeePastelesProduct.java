@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import com.jesuscast.reposteriaanita.AppReposteria;
-import com.jesuscast.reposteriaanita.models.Gelatina;
 import com.jesuscast.reposteriaanita.models.Pastel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -65,7 +64,7 @@ public class SeePastelesProduct {
 
     @FXML
     void initialize() {
-        container.getStylesheets().add("com/jesuscast/reposteriaanita/style.css");
+        container.getStylesheets().add("com/jesuscast/reposteriaanita/styles/style.css");
         pasteles= FXCollections.observableArrayList();
         ArrayList<Pastel> listaPasteles;
         listaPasteles= AppReposteria.getReposteria().getListaProductosPastel();

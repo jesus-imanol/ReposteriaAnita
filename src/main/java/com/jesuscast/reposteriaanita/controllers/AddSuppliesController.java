@@ -2,6 +2,8 @@ package com.jesuscast.reposteriaanita.controllers;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import com.jesuscast.reposteriaanita.AppReposteria;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
@@ -11,7 +13,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-public class AddClientController {
+public class AddSuppliesController {
 
     @FXML
     private ResourceBundle resources;
@@ -20,37 +22,34 @@ public class AddClientController {
     private URL location;
 
     @FXML
-    private Button addClientBtn;
-
-    @FXML
-    private TextField addressClientInput;
+    private Button addSuppliesBtn;
 
     @FXML
     private Button exitBtn;
 
     @FXML
-    private TextField nameClientInput;
+    private TextField nameInsumoInput;
 
     @FXML
-    private ComboBox<String> sexoClientComboBox;
+    private ComboBox<String> unitComboBox;
 
     @FXML
-    private TextField timeClientInput;
+    private TextField amountInput;
 
     @FXML
-    void onClickAddClient(MouseEvent event) {
-        if (nameClientInput.getText().trim().isEmpty()||
-                timeClientInput.getText().trim().isEmpty() ||
-                addressClientInput.getText().trim().isEmpty() ||
-              sexoClientComboBox.getValue() != null) {
+    void onClickAddSupplies(MouseEvent event) {
+        if (nameInsumoInput.getText().trim().isEmpty()||
+                amountInput.getText().trim().isEmpty()||
+                unitComboBox.getValue() != null) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Se requieren datos");
             alert.setContentText("Por favor complete los campos");
             alert.showAndWait();
         }
         else {
-            //Aqui se agregará el cliente
-            sexoClientComboBox.getValue();
+            //Somer aqui puedes obtener el combo box
+            unitComboBox.getValue();
+            //Aqui se agregara
         }
     }
 
@@ -62,7 +61,9 @@ public class AddClientController {
 
     @FXML
     void initialize() {
-        sexoClientComboBox.getItems().addAll("Hombre","Mujer","No binario");
+        AppReposteria.addValidator(amountInput);
+        AppReposteria.addValidator(nameInsumoInput);
+        unitComboBox.getItems().addAll("Kilo","Unidad","Litro");
     }
 
 }
