@@ -46,6 +46,7 @@ public class DeleteProductController {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Error");
             alert.setContentText("Por favor ingrese una ID");
+            alert.showAndWait();
         } else {
             String id = nameProductDeleteImage.getText();
            if (AppReposteria.getReposteria().eliminarProducto(id)){

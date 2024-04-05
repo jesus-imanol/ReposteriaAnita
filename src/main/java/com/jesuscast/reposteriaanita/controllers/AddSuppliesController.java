@@ -4,6 +4,9 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import com.jesuscast.reposteriaanita.AppReposteria;
+import com.jesuscast.reposteriaanita.models.Insumo;
+import com.jesuscast.reposteriaanita.models.InsumoPorKiloOLitro;
+import com.jesuscast.reposteriaanita.models.InsumosPorUnidad;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
@@ -47,8 +50,50 @@ public class AddSuppliesController {
             alert.showAndWait();
         }
         else {
-            //Somer aqui puedes obtener el combo box
-            unitComboBox.getValue();
+            String nombre = nameInsumoInput.getText();
+            String unidadMedida=unitComboBox.getValue();
+            try {
+                switch (unidadMedida){
+                    case "Kilo":
+                    case "Litro":
+                       double cantidad=Double.parseDouble(amountInput.getText());
+                        Insumo insumo = new InsumoPorKiloOLitro(nombre,unidadMedida,cantidad);
+                        if (AppReposteria.getReposteria().addInsumo(insumo)){
+                            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                            alert.setTitle("Exito");
+                            alert.setContentText("Guardado exitosamente");
+                            alert.showAndWait();
+                    }
+                        else {
+                            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                            alert.setTitle("Error");
+                            alert.setContentText("Ha habido un error al guardar, intente de nuevo, por favor");
+                            alert.showAndWait();
+                        }
+                        break;
+                    case "Unidad":
+                        int cantidadUnidad = Integer.parseInt(amountInput.getText());
+                        Insumo insumoUnidad = new InsumosPorUnidad(nombre,unidadMedida, cantidadUnidad);
+                        if (AppReposteria.getReposteria().addInsumo(insumoUnidad)){
+                            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                            alert.setTitle("Exito");
+                            alert.setContentText("Guardado exitosamente");
+                            alert.showAndWait();
+                        }
+                        else {
+                            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                            alert.setTitle("Error");
+                            alert.setContentText("Ha habido un error al guardar, intente de nuevo, por favor");
+                            alert.showAndWait();
+                        }
+                }
+            }
+            catch (Exception e){
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Error");
+                alert.setContentText("Error al guardar datos, ingrese solo valores númericos"+e.getMessage());
+                alert.showAndWait();
+            }
             //Aqui se agregara
         }
     }

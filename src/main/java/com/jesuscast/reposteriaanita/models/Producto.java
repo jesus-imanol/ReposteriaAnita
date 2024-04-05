@@ -1,5 +1,9 @@
 package com.jesuscast.reposteriaanita.models;
 
+import java.nio.ByteBuffer;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.Arrays;
 import java.util.UUID;
 
 public class Producto {
@@ -8,6 +12,7 @@ public class Producto {
     protected int cantidad;
     protected double precio;
     private boolean status;
+
     public Producto(String nombreProducto, int cantidad, double precio) {
         this.id = UUID.randomUUID().toString();
         this.nombreProducto = nombreProducto;

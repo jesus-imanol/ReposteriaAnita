@@ -7,12 +7,13 @@ public class Insumo {
     String unidadMedida;
     String id;
     private boolean status;
+    private Insumo insumo;
     public Insumo(){}
     public Insumo(String nombre, String unidadMedida) {
         this.nombre = nombre;
-        this.unidadMedida = unidadMedida;
         this.id= UUID.randomUUID().toString();
         this.status=true;
+        this.unidadMedida=unidadMedida;
     }
 
     public String getNombre() {
@@ -29,5 +30,29 @@ public class Insumo {
 
     public void setUnidadMedida(String unidadMedida) {
         this.unidadMedida = unidadMedida;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+
+    public Insumo getInsumo() {
+        return insumo;
+    }
+
+    public void setInsumo(Insumo insumo) {
+        this.insumo = insumo;
     }
 }

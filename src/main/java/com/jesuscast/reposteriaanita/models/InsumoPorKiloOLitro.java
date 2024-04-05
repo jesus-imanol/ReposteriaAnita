@@ -1,13 +1,10 @@
 package com.jesuscast.reposteriaanita.models;
 
-import com.jesuscast.reposteriaanita.models.Insumo;
-
-public class InsumoPorLitro extends Insumo {
+public class InsumoPorKiloOLitro extends Insumo {
     private double cantidad;
-    public InsumoPorLitro(){}
 
-    public InsumoPorLitro(String nombre, String unidadMedida, double cantidad) {
-        super(nombre, unidadMedida);
+    public InsumoPorKiloOLitro(String nombre,String uniidadDeMedidad, double cantidad) {
+        super(nombre,uniidadDeMedidad);
         this.cantidad = cantidad;
     }
 
@@ -32,4 +29,5 @@ public class InsumoPorLitro extends Insumo {
         }
         return fallo;
     }
+
 }

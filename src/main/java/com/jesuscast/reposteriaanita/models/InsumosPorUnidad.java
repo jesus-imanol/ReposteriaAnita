@@ -6,16 +6,16 @@ public class InsumosPorUnidad extends Insumo {
     private int cantidad;
     public InsumosPorUnidad(){}
 
-    public InsumosPorUnidad(String nombre, String unidadMedida, int cantidad) {
-        super(nombre, unidadMedida);
+    public InsumosPorUnidad(String nombre, String unidadDeMedidad, int cantidad) {
+        super(nombre,unidadDeMedidad);
         this.cantidad = cantidad;
     }
 
-    public int getCantidad() {
+    public int getCantidadPorKilo() {
         return cantidad;
     }
 
-    public void setCantidad(int cantidad) {
+    public void setCantidadPorUnidad(int cantidad) {
         this.cantidad = cantidad;
     }
 }
