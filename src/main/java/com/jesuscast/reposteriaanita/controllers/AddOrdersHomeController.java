@@ -11,7 +11,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-public class AddOrdersInPremisesController {
+public class AddOrdersHomeController {
 
     @FXML
     private ResourceBundle resources;
@@ -26,9 +26,6 @@ public class AddOrdersInPremisesController {
     private TextField clienteOrderinput;
 
     @FXML
-    private DatePicker dateCollected;
-
-    @FXML
     private DatePicker dateOrderDatePicker;
 
     @FXML
@@ -38,16 +35,19 @@ public class AddOrdersInPremisesController {
     private Button exitBtn;
 
     @FXML
+    private TextField nameHome;
+
+    @FXML
     private TextField nameProductPeopleInput;
 
     @FXML
-    private TextField premisesCollected;
+    private TextField referenceInput;
+
+    @FXML
+    private TextField shippingCostInput;
 
     @FXML
     private ComboBox<?> statusOrderComboBox;
-
-    @FXML
-    private TextField timeCollectedInput;
 
     @FXML
     private TextField timeOrderInput;
@@ -65,7 +65,7 @@ public class AddOrdersInPremisesController {
 
     @FXML
     void initialize() {
- 
+
     }
 
 }

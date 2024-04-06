@@ -26,7 +26,7 @@
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0);
 }
 .image-view:hover {
-    -fx-effect: dropshadow(three-pass-box, red, 10, 0, 0, 0);
+    -fx-effect: dropshadow(three-pass-box, red, 20, 0, 0, 0);
 }
 
 Button {

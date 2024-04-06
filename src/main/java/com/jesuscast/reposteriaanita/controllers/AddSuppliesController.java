@@ -43,7 +43,7 @@ public class AddSuppliesController {
     void onClickAddSupplies(MouseEvent event) {
         if (nameInsumoInput.getText().trim().isEmpty()||
                 amountInput.getText().trim().isEmpty()||
-                unitComboBox.getValue() != null) {
+                unitComboBox.getValue() == null) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Se requieren datos");
             alert.setContentText("Por favor complete los campos");

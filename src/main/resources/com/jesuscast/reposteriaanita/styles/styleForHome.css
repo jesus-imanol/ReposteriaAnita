@@ -1,13 +1,13 @@
 
 .label {
-    -fx-font-family: "Montserrat", sans-serif; /* Fuente para las etiquetas */
-    -fx-font-size: 24px; /* Tamaño de fuente */
-    -fx-text-fill: #333333; /* Color del texto */
+    -fx-font-family: "Montserrat", sans-serif;
+    -fx-font-size: 24px;
+    -fx-text-fill: #333333;
 }
 
-/* Estilos para el panel de bienvenida */
+
 #welcomePane {
-    -fx-background-color: #48A7FA; /* Color de fondo */
+    -fx-background-color: #48A7FA;
 }
 
 /* Estilos para las imágenes */
@@ -15,7 +15,7 @@
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0); /* Sombra suave */
 }
 .image-view:hover {
-    -fx-effect: dropshadow(three-pass-box, #007bff, 10, 0, 0, 0);
+    -fx-effect: dropshadow(three-pass-box, #007bff, 20, 0, 0, 0);
 }
 
 

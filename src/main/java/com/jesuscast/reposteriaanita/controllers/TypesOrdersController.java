@@ -11,7 +11,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-public class OrdersController {
+public class TypesOrdersController {
 
     @FXML
     private ResourceBundle resources;
@@ -20,34 +20,13 @@ public class OrdersController {
     private URL location;
 
     @FXML
-    private ImageView addPedidoImage;
-
-    @FXML
-    private ImageView deletePedidoImage;
-
-    @FXML
     private Button exitBtn;
 
     @FXML
-    private ImageView seePedidoImage;
+    private ImageView orderInPremisesImage;
 
     @FXML
-    private ImageView updatePedidoImage;
-
-    @FXML
-    void OnClickSeePedido(MouseEvent event) {
-
-    }
-
-    @FXML
-    void onClickAddPedido(MouseEvent event) {
-        AppReposteria.newStage("tipo-pedido","Tipos de pedidos");
-    }
-
-    @FXML
-    void onClickDeletePedido(MouseEvent event) {
-
-    }
+    private ImageView ordersHomeImage;
 
     @FXML
     void onClickExit(MouseEvent event) {
@@ -56,8 +35,13 @@ public class OrdersController {
     }
 
     @FXML
-    void onClickUpdatePedido(MouseEvent event) {
+    void onClickOrdersHome(MouseEvent event) {
+        AppReposteria.newStage("pedidos-domicilio-view","Pedidos a domicilio");
+    }
 
+    @FXML
+    void onClickOrdersInPremises(MouseEvent event) {
+        AppReposteria.newStage("pedidos-local-view","Pedidos en local");
     }
 
     @FXML
@@ -66,4 +50,3 @@ public class OrdersController {
     }
 
 }
-
