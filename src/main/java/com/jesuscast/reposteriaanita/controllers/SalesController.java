@@ -2,8 +2,6 @@ package com.jesuscast.reposteriaanita.controllers;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-
-import com.jesuscast.reposteriaanita.AppReposteria;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
@@ -11,7 +9,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-public class OrdersController {
+public class SalesController {
 
     @FXML
     private ResourceBundle resources;
@@ -20,33 +18,36 @@ public class OrdersController {
     private URL location;
 
     @FXML
-    private ImageView addPedidoImage;
+    private ImageView addVentaImage;
 
     @FXML
-    private ImageView deletePedidoImage;
+    private ImageView decorationImg;
+
+    @FXML
+    private ImageView deleteVentaImage;
 
     @FXML
     private Button exitBtn;
 
     @FXML
-    private ImageView seePedidoImage;
+    private ImageView seeVentaImage;
 
     @FXML
-    private ImageView updatePedidoImage;
+    private ImageView updateVentaImage;
 
     @FXML
-    void OnClickSeePedido(MouseEvent event) {
-        AppReposteria.newStage("ver-tipos-pedidos-view","Ver tipos de pedidos");
+    void OnClickSeeVenta(MouseEvent event) {
+
     }
 
     @FXML
-    void onClickAddPedido(MouseEvent event) {
-        AppReposteria.newStage("tipo-pedido","Tipos de pedidos");
+    void onClickAddVenta(MouseEvent event) {
+
     }
 
     @FXML
-    void onClickDeletePedido(MouseEvent event) {
-        AppReposteria.newStage("eliminar-pedido-view","Eliminar pedido");
+    void onClickDeleteVenta(MouseEvent event) {
+
     }
 
     @FXML
@@ -56,8 +57,8 @@ public class OrdersController {
     }
 
     @FXML
-    void onClickUpdatePedido(MouseEvent event) {
-        AppReposteria.newStage("editar-tipos-pedidos-view","Editar pedidos");
+    void onClickUpdateVenta(MouseEvent event) {
+
     }
 
     @FXML
@@ -66,4 +67,3 @@ public class OrdersController {
     }
 
 }
-

@@ -56,7 +56,7 @@ public class ProductoController {
 
     @FXML
     void onClickUpdateProduct(MouseEvent event) {
-
+        AppReposteria.newStage("update-products-view","Actualizar productos");
     }
 
     @FXML

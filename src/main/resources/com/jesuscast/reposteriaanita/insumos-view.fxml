@@ -12,7 +12,7 @@
    <children>
       <Pane prefHeight="138.0" prefWidth="1280.0" style="-fx-background-color: #F8C471;">
          <children>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="104.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="229.0" fitWidth="287.0" layoutX="112.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@img/panadera.png" />
                </image>
@@ -22,11 +22,6 @@
                   <Font size="64.0" />
                </font>
             </Label>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="273.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@img/decoracion.png" />
-               </image>
-            </ImageView>
          </children>
       </Pane>
       <ImageView fx:id="addInsumoImage" fitHeight="296.0" fitWidth="313.0" layoutX="75.0" layoutY="270.0" onMouseClicked="#onClickAddInsumo" pickOnBounds="true" preserveRatio="true">

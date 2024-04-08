@@ -58,7 +58,7 @@ public class SuperAdminController {
 
     @FXML
     void onClickVentas(MouseEvent event) {
-
+            AppReposteria.newStage("ventas-view","Ventas");
     }
 
     @FXML

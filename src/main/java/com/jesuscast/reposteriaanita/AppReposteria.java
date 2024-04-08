@@ -1,14 +1,18 @@
 package com.jesuscast.reposteriaanita;
 
 import com.jesuscast.reposteriaanita.models.Reposteria;
+import javafx.animation.TranslateTransition;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import org.kordamp.bootstrapfx.BootstrapFX;
 
 import java.io.IOException;
@@ -75,5 +79,19 @@ public class AppReposteria extends javafx.application.Application {
                 }
             }
         });
+    }
+    public static void animateImage(ImageView image) {
+        TranslateTransition transition = new TranslateTransition(Duration.seconds(0.25), image);
+        transition.setToY(-50);
+        transition.setCycleCount(2);
+        transition.setAutoReverse(true);
+        transition.play();
+    }
+    public static void animateButton(Button button) {
+        TranslateTransition transition = new TranslateTransition(Duration.seconds(0.25), button);
+        transition.setToY(-50);
+        transition.setCycleCount(2);
+        transition.setAutoReverse(true);
+        transition.play();
     }
 }
