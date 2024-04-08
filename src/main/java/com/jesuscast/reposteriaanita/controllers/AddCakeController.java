@@ -71,18 +71,24 @@ public class AddCakeController {
               int cantidad = Integer.parseInt(amountInput.getText());
               double precio = Double.parseDouble(priceInput.getText());
               int cantidadPersonas = Integer.parseInt(amountPersonInput.getText());
-              Pastel pastel = new Pastel(nombre,cantidad, precio,cantidadPersonas,relleno,desing);
-
-              if (AppReposteria.getReposteria().addPastel(pastel)){
-                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                 alert.setTitle("Exito");
-                 alert.setContentText("Pedido agregado con éxito");
-                 alert.showAndWait();
+              if (cantidad>=0 && precio >=0 && cantidadPersonas>=0) {
+                  Pastel pastel = new Pastel(nombre, cantidad, precio, cantidadPersonas, relleno, desing);
+                  if (AppReposteria.getReposteria().addPastel(pastel)) {
+                      Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                      alert.setTitle("Exito");
+                      alert.setContentText("Pedido agregado con éxito");
+                      alert.showAndWait();
+                  } else {
+                      Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                      alert.setTitle("Error");
+                      alert.setContentText("Fallo al guardar, por favor intente de nuevo");
+                      alert.showAndWait();
+                  }
               }
               else {
                   Alert alert = new Alert(Alert.AlertType.INFORMATION);
                   alert.setTitle("Error");
-                  alert.setContentText("Fallo al guardar, por favor intente de nuevo");
+                  alert.setContentText("No puede ingresar cantidades negativas");
                   alert.showAndWait();
               }
           }

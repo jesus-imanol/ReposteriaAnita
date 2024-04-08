@@ -9,8 +9,8 @@ public class PedidoEnLocal extends Pedido {
     private LocalTime horaRecogido;
     private String localRecogido;
     public PedidoEnLocal(){}
-    public PedidoEnLocal(String nombreCliente, LocalDate fechaDePedido, LocalTime horaDePedido, String descripciónProducto, String productDesing, String status, LocalDate fechaRecogido, LocalTime horaRecogido, String localRecogido) {
-        super(nombreCliente, fechaDePedido, horaDePedido, descripciónProducto, productDesing, status);
+    public PedidoEnLocal(String nombreCliente, LocalDate fechaDeEntrega, LocalTime horaDeEntrega, String productDesing, String status, String nombreProducto, LocalDate fechaRecogido, LocalTime horaRecogido, String localRecogido) {
+        super(nombreCliente, fechaDeEntrega, horaDeEntrega, productDesing, status, nombreProducto);
         this.fechaRecogido = fechaRecogido;
         this.horaRecogido = horaRecogido;
         this.localRecogido = localRecogido;

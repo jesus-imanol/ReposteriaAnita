@@ -1,13 +1,16 @@
 package com.jesuscast.reposteriaanita.controllers;
 
 import java.net.URL;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ResourceBundle;
+
+import com.jesuscast.reposteriaanita.AppReposteria;
+import com.jesuscast.reposteriaanita.models.Pedido;
+import com.jesuscast.reposteriaanita.models.PedidoADomicilio;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
@@ -47,14 +50,67 @@ public class AddOrdersHomeController {
     private TextField shippingCostInput;
 
     @FXML
-    private ComboBox<?> statusOrderComboBox;
+    private ComboBox<String> statusOrderComboBox;
 
     @FXML
     private TextField timeOrderInput;
 
     @FXML
     void onClickAddOrders(MouseEvent event) {
-
+       if(clienteOrderinput.getText().trim().isEmpty() || dateOrderDatePicker.getValue()==null || designProduct.getText().trim().isEmpty() || nameHome.getText().trim().isEmpty() || nameProductPeopleInput.getText().trim().isEmpty() || referenceInput.getText().trim().isEmpty() || shippingCostInput.getText().trim().isEmpty() ||statusOrderComboBox.getValue()==null || timeOrderInput.getText().trim().isEmpty()){
+           Alert alert = new Alert(Alert.AlertType.INFORMATION);
+           alert.setTitle("Se requieren datos");
+           alert.setContentText("Por favor complete los campos");
+           alert.showAndWait();
+       }
+       else {
+           String nombreProducto = nameProductPeopleInput.getText();
+           String nombreCliente = clienteOrderinput.getText();
+           String desingProducto=designProduct.getText();
+           String nombreDomicilio=nameHome.getText();
+           String referencia= referenceInput.getText();
+           String estatus = statusOrderComboBox.getValue();
+           LocalDate fechaDeEntrega=null;
+           LocalTime horaDeEntrega=null;
+           double costoEnvio=0;
+           boolean error=false;
+           try {
+               fechaDeEntrega=dateOrderDatePicker.getValue();
+               error = true;
+           }catch (Exception e){
+               Alert alert = new Alert(Alert.AlertType.INFORMATION);
+               alert.setTitle("Error");
+               alert.setContentText("Ingrese la fecha correctamente: dd/mm/aaaa"+e.getMessage());
+               alert.showAndWait();
+           }
+           try {
+               horaDeEntrega=LocalTime.parse(timeOrderInput.getText());
+               error = true;
+           }catch (Exception e){
+               Alert alert = new Alert(Alert.AlertType.INFORMATION);
+               alert.setTitle("Error");
+               alert.setContentText("Ingrese la hora correctamente: hh:mm:ss(los segundos son opcionales)"+e.getMessage());
+               alert.showAndWait();
+           }
+           try {
+               costoEnvio= Double.parseDouble(shippingCostInput.getText());
+               error=true;
+           }catch (Exception e){
+               Alert alert = new Alert(Alert.AlertType.INFORMATION);
+               alert.setTitle("Error");
+               alert.setContentText("Ingrese solo valores numericos"+e.getMessage());
+               alert.showAndWait();
+           }
+           if (!error){
+               Pedido pedido = new PedidoADomicilio(nombreCliente,fechaDeEntrega,horaDeEntrega,desingProducto,estatus,nombreProducto,nombreDomicilio,costoEnvio,referencia);
+               if (AppReposteria.getReposteria().getListaPedidos().add(pedido)){
+                   Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                   alert.setTitle("Exito");
+                   alert.setContentText("Guardado exitosamente");
+                   alert.showAndWait();
+               }
+           }
+       }
     }
 
     @FXML
@@ -65,7 +121,7 @@ public class AddOrdersHomeController {
 
     @FXML
     void initialize() {
-
+        statusOrderComboBox.getItems().addAll("Por entregar","Sin corfirmar");
     }
 
 }

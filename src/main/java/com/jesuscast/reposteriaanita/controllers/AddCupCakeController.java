@@ -68,17 +68,23 @@ public class AddCupCakeController {
         try {
             cantidad = Integer.parseInt(amountInput.getText());
             precio=Double.parseDouble(priceInput.getText());
-            Cupcake cupcake = new Cupcake(nombre, cantidad, precio,relleno, desing);
-            if (AppReposteria.getReposteria().addCupcake(cupcake)){
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Exito");
-                alert.setContentText("Guardado exitosamente");
-                alert.showAndWait();
-            }
-            else {
+            if (cantidad>=0 && precio>=0) {
+                Cupcake cupcake = new Cupcake(nombre, cantidad, precio,relleno, desing);
+                if (AppReposteria.getReposteria().addCupcake(cupcake)) {
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Exito");
+                    alert.setContentText("Guardado exitosamente");
+                    alert.showAndWait();
+                } else {
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Error");
+                    alert.setContentText("Ha habido un error al guardar, intente de nuevo, por favor");
+                    alert.showAndWait();
+                }
+            }else {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Error");
-                alert.setContentText("Ha habido un error al guardar, intente de nuevo, por favor");
+                alert.setContentText("No puede ingresar cantidades negativas");
                 alert.showAndWait();
             }
         }

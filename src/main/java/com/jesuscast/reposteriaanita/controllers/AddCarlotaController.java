@@ -66,20 +66,25 @@ public class AddCarlotaController {
            try{
                cantidad=Integer.parseInt(amountInput.getText());
                precio=Double.parseDouble(priceInput.getText());
-               Carlota carlota=new Carlota(nombre, cantidad, precio,size, tipo);
-               if (AppReposteria.getReposteria().addCarlota(carlota)){
-                   Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                   alert.setTitle("Exito");
-                   alert.setContentText("Guardado exitosamente");
-                   alert.showAndWait();
-               }
-               else {
+               if (cantidad >=0 && precio >=0) {
+                   Carlota carlota=new Carlota(nombre, cantidad, precio,size, tipo);
+                   if (AppReposteria.getReposteria().addCarlota(carlota)) {
+                       Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                       alert.setTitle("Exito");
+                       alert.setContentText("Guardado exitosamente");
+                       alert.showAndWait();
+                   } else {
+                       Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                       alert.setTitle("Error");
+                       alert.setContentText("Ha habido un error al guardar, intente de nuevo, por favor");
+                       alert.showAndWait();
+                   }
+               }else {
                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
                    alert.setTitle("Error");
-                   alert.setContentText("Ha habido un error al guardar, intente de nuevo, por favor");
+                   alert.setContentText("No puede ingresar cantidades negativas");
                    alert.showAndWait();
                }
-
            }
            catch (Exception e){
                Alert alert = new Alert(Alert.AlertType.INFORMATION);

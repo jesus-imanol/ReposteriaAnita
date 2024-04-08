@@ -65,17 +65,23 @@ public class AddFlanController {
               cantidad=Integer.parseInt(amountInput.getText());
               precio=Double.parseDouble(priceInput.getText());
               cantidadPersonas=Integer.parseInt(amountPersonInput.getText());
-              Flan flan = new Flan(nombre, cantidad, precio, cantidadPersonas, desing);
-              if (AppReposteria.getReposteria().addFlan(flan)){
-                  Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                  alert.setTitle("Exito");
-                  alert.setContentText("Guardado exitosamente");
-                  alert.showAndWait();
-              }
-              else {
+              if (cantidad >=0 && precio >=0 && cantidadPersonas>=0) {
+                  Flan flan = new Flan(nombre, cantidad, precio, cantidadPersonas, desing);
+                  if (AppReposteria.getReposteria().addFlan(flan)) {
+                      Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                      alert.setTitle("Exito");
+                      alert.setContentText("Guardado exitosamente");
+                      alert.showAndWait();
+                  } else {
+                      Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                      alert.setTitle("Error");
+                      alert.setContentText("Ha habido un error al guardar, intente de nuevo, por favor");
+                      alert.showAndWait();
+                  }
+              }else {
                   Alert alert = new Alert(Alert.AlertType.INFORMATION);
                   alert.setTitle("Error");
-                  alert.setContentText("Ha habido un error al guardar, intente de nuevo, por favor");
+                  alert.setContentText("No puede ingresar cantidades negativas");
                   alert.showAndWait();
               }
           }

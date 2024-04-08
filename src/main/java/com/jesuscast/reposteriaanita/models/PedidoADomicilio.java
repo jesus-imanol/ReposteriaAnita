@@ -10,8 +10,8 @@ public class PedidoADomicilio extends Pedido {
     private double costoEnvio;
     private String referencia;
     public PedidoADomicilio(){}
-    public PedidoADomicilio(String nombreCliente, LocalDate fechaDePedido, LocalTime horaDePedido, String descripciónProducto, String productDesing, String status, String nombreDomicilio, double costoEnvio, String referencia) {
-        super(nombreCliente, fechaDePedido, horaDePedido, descripciónProducto, productDesing, status);
+    public PedidoADomicilio(String nombreCliente, LocalDate fechaDeEntrega, LocalTime horaDeEntrega, String productDesing, String status,String nombreProducto, String nombreDomicilio, double costoEnvio, String referencia) {
+        super(nombreCliente, fechaDeEntrega, horaDeEntrega, productDesing, status, nombreProducto);
         this.nombreDomicilio = nombreDomicilio;
         this.costoEnvio = costoEnvio;
         this.referencia = referencia;

@@ -32,7 +32,26 @@ public class DeleteProductController {
 
     @FXML
     void onClickDeleteProduct(MouseEvent event) {
-
+        if (nameProductDeleteImage.getText().trim().isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Error");
+            alert.setContentText("Por favor ingrese una ID");
+            alert.showAndWait();
+        } else {
+            String id = nameProductDeleteImage.getText();
+            if (AppReposteria.getReposteria().eliminarProducto(id)){
+                Alert alert=new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Éxito");
+                alert.setContentText("Producto eliminado con éxito");
+                alert.showAndWait();
+            }
+            else {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Error");
+                alert.setContentText("No existe ningún producto con esta ID");
+                alert.showAndWait();
+            }
+        }
     }
 
     @FXML
@@ -41,29 +60,6 @@ public class DeleteProductController {
         stage.close();
     }
 
-    @FXML
-    void onClickNameProductDeleteImage(MouseEvent event) {
-        if (nameProductDeleteImage.getText().trim().isEmpty()) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Error");
-            alert.setContentText("Por favor ingrese una ID");
-            alert.showAndWait();
-        } else {
-            String id = nameProductDeleteImage.getText();
-           if (AppReposteria.getReposteria().eliminarProducto(id)){
-               Alert alert=new Alert(Alert.AlertType.INFORMATION);
-               alert.setTitle("Éxito");
-               alert.setContentText("Producto eliminado con éxito");
-               alert.showAndWait();
-           }
-           else {
-               Alert alert = new Alert(Alert.AlertType.INFORMATION);
-               alert.setTitle("Error");
-               alert.setContentText("No existe ningún producto con esta ID");
-               alert.showAndWait();
-           }
-        }
-    }
     @FXML
     void initialize() {
 

@@ -48,5 +48,4 @@ public class Insumo {
         this.status = status;
     }
 
-
 }

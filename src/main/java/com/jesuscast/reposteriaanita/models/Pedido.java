@@ -7,20 +7,20 @@ import java.util.UUID;
 public class Pedido {
     protected String id;
     protected String nombreCliente;
-    protected LocalDate fechaDePedido;
-    protected LocalTime horaDePedido;
-    protected String descripciónProducto;
+    protected LocalDate fechaDeEntrega;
+    protected LocalTime horaDeEntrega;
     protected String productDesing;
+    protected String nombreProducto;
     protected String status;
     public Pedido(){}
-    public Pedido(String nombreCliente, LocalDate fechaDePedido, LocalTime horaDePedido, String descripciónProducto, String productDesing, String status) {
+    public Pedido(String nombreCliente, LocalDate fechaDeEntrega, LocalTime horaDeEntrega,String productDesing, String status, String nombreProducto) {
         this.id= UUID.randomUUID().toString();
         this.nombreCliente = nombreCliente;
-        this.fechaDePedido = fechaDePedido;
-        this.horaDePedido = horaDePedido;
-        this.descripciónProducto = descripciónProducto;
+        this.fechaDeEntrega = fechaDeEntrega;
+        this.horaDeEntrega= horaDeEntrega;
         this.productDesing = productDesing;
         this.status = status;
+        this.nombreProducto=nombreProducto;
     }
 
     public String getId() {
@@ -40,27 +40,19 @@ public class Pedido {
     }
 
     public LocalDate getFechaDePedido() {
-        return fechaDePedido;
+        return fechaDeEntrega;
     }
 
     public void setFechaDePedido(LocalDate fechaDePedido) {
-        this.fechaDePedido = fechaDePedido;
+        this.fechaDeEntrega = fechaDePedido;
     }
 
     public LocalTime getHoraDePedido() {
-        return horaDePedido;
+        return horaDeEntrega;
     }
 
     public void setHoraDePedido(LocalTime horaDePedido) {
-        this.horaDePedido = horaDePedido;
-    }
-
-    public String getDescripciónProducto() {
-        return descripciónProducto;
-    }
-
-    public void setDescripciónProducto(String descripciónProducto) {
-        this.descripciónProducto = descripciónProducto;
+        this.horaDeEntrega = horaDePedido;
     }
 
     public String getProductDesing() {
