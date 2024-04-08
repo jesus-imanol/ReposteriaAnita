@@ -11,7 +11,7 @@ public class InsumosPorUnidad extends Insumo {
         this.cantidad = cantidad;
     }
 
-    public int getCantidadPorKilo() {
+    public int getCantidad() {
         return cantidad;
     }
 

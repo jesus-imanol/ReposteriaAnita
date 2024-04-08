@@ -7,7 +7,7 @@ public class Insumo {
     String unidadMedida;
     String id;
     private boolean status;
-    private Insumo insumo;
+
     public Insumo(){}
     public Insumo(String nombre, String unidadMedida) {
         this.nombre = nombre;
@@ -48,11 +48,5 @@ public class Insumo {
         this.status = status;
     }
 
-    public Insumo getInsumo() {
-        return insumo;
-    }
 
-    public void setInsumo(Insumo insumo) {
-        this.insumo = insumo;
-    }
 }

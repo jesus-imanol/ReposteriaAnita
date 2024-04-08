@@ -169,4 +169,16 @@ public class Reposteria {
                 }
                 return encontrado;
         }
+        public boolean eliminarInsumo(String id){
+                boolean encontrado=false;
+                boolean status;
+                for (short i = 0; i<listaInsumos.size(); i++){
+                        if (listaInsumos.get(i).getId().equals(id)) {
+                                status = false;
+                                listaInsumos.get(i).setStatus(status);
+                                encontrado = true;
+                        }
+                }
+                return encontrado;
+        }
 }
