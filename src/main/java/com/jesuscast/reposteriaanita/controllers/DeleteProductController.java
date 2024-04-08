@@ -1,11 +1,9 @@
 package com.jesuscast.reposteriaanita.controllers;
 
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import com.jesuscast.reposteriaanita.AppReposteria;
-import com.jesuscast.reposteriaanita.models.Reposteria;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
@@ -15,6 +13,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 public class DeleteProductController {
+
     @FXML
     private ResourceBundle resources;
 
@@ -28,17 +27,17 @@ public class DeleteProductController {
     private ImageView exitImage;
 
     @FXML
-    private TextField nameProductDeleteImage;
+    private TextField nameProductDelete;
 
     @FXML
     void onClickDeleteProduct(MouseEvent event) {
-        if (nameProductDeleteImage.getText().trim().isEmpty()) {
+        if (nameProductDelete.getText().trim().isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Error");
             alert.setContentText("Por favor ingrese una ID");
             alert.showAndWait();
         } else {
-            String id = nameProductDeleteImage.getText();
+            String id = nameProductDelete.getText();
             if (AppReposteria.getReposteria().eliminarProducto(id)){
                 Alert alert=new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Éxito");

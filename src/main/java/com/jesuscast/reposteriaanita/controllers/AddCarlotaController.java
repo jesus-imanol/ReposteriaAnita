@@ -10,6 +10,7 @@ import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -43,14 +44,14 @@ public class AddCarlotaController {
     private TextField sizeInput;
 
     @FXML
-    private TextField typeInput;
+    private ComboBox<String> typeComboBox;
 
     @FXML
     void onClickAddProduct(MouseEvent event) {
         if (amountInput.getText().trim().isEmpty()||
                 nameInput.getText().trim().isEmpty() ||
                 priceInput.getText().trim().isEmpty() ||
-                typeInput.getText().trim().isEmpty() || sizeInput.getText().isEmpty()) {
+                typeComboBox.getValue().isEmpty() || sizeInput.getText().isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Se requieren datos");
             alert.setContentText("Por favor complete los campos");
@@ -59,7 +60,7 @@ public class AddCarlotaController {
         //Somer aqui agregaras el producto
         else {
            String nombre=nameInput.getText();
-           String tipo=typeInput.getText();
+           String tipo=typeComboBox.getValue();
            String size=sizeInput.getText();
            int cantidad;
            double precio;
@@ -94,18 +95,7 @@ public class AddCarlotaController {
            }
         }
     }
-    private void addValidator(TextField field) {
-        field.textProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                if (newValue.trim().isEmpty()) {
-                    field.setStyle("-fx-border-color: red ; -fx-border-width: 2px ;");
-                } else {
-                    field.setStyle("");
-                }
-            }
-        });
-    }
+
 
     @FXML
     void onClickExit(MouseEvent event) {
@@ -115,11 +105,10 @@ public class AddCarlotaController {
 
     @FXML
     void initialize() {
-        addValidator(amountInput);
-        addValidator(nameInput);
-        addValidator(typeInput);
-        addValidator(sizeInput);
-        addValidator(priceInput);
+        AppReposteria.addValidator(amountInput);
+        AppReposteria.addValidator(nameInput);
+        AppReposteria.addValidator(sizeInput);
+        AppReposteria.addValidator(priceInput);
     }
 
 }
