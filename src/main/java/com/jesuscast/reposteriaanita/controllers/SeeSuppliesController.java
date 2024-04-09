@@ -69,6 +69,7 @@ public class SeeSuppliesController {
         this.nameSuppliesColumn.setCellValueFactory(new PropertyValueFactory("nombre"));
         this.amountSuppliesColumn.setCellValueFactory(new PropertyValueFactory("cantidad"));
         this.idSuppliesColumn.setCellValueFactory(new PropertyValueFactory("id"));
+        this.unitSuppliesColumn.setCellValueFactory(new PropertyValueFactory("unidadMedida"));
         for (short i = 0; i<listaInsumos.size();i++){
             if (listaInsumos.get(i).isStatus()){
                 insumos.add(listaInsumos.get(i));

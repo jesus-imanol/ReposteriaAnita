@@ -58,6 +58,7 @@ public class AddFlanController {
         else {
           String nombre=nameInput.getText();
           String desing = designInput.getText();
+          String size= "En espera";
           int cantidad;
           double precio;
           int cantidadPersonas;
@@ -66,7 +67,7 @@ public class AddFlanController {
               precio=Double.parseDouble(priceInput.getText());
               cantidadPersonas=Integer.parseInt(amountPersonInput.getText());
               if (cantidad >=0 && precio >=0 && cantidadPersonas>=0) {
-                  Flan flan = new Flan(nombre, cantidad, precio, cantidadPersonas, desing);
+                  Flan flan = new Flan(nombre, cantidad, precio, cantidadPersonas, desing, size);
                   if (AppReposteria.getReposteria().addFlan(flan)) {
                       Alert alert = new Alert(Alert.AlertType.INFORMATION);
                       alert.setTitle("Exito");

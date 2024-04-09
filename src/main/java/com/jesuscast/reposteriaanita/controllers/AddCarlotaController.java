@@ -68,7 +68,7 @@ public class AddCarlotaController {
                cantidad=Integer.parseInt(amountInput.getText());
                precio=Double.parseDouble(priceInput.getText());
                if (cantidad >=0 && precio >=0) {
-                   Carlota carlota=new Carlota(nombre, cantidad, precio,size, tipo);
+                   Carlota carlota=new Carlota(nombre, cantidad, precio,tipo);
                    if (AppReposteria.getReposteria().addCarlota(carlota)) {
                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
                        alert.setTitle("Exito");
@@ -105,6 +105,7 @@ public class AddCarlotaController {
 
     @FXML
     void initialize() {
+        typeComboBox.getItems().addAll("De vaso","Entero(tipo pastel)");
         AppReposteria.addValidator(amountInput);
         AppReposteria.addValidator(nameInput);
         AppReposteria.addValidator(sizeInput);

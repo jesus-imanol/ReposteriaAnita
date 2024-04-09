@@ -63,11 +63,15 @@ public class UpdateSuppliesController {
           ArrayList<Insumo> insumos;
           insumos=AppReposteria.getReposteria().getListaInsumos();
           boolean encontrado = false;
-          for (short i =0; i<insumos.size(); i++){
-              if (insumos.get(i).getId().equals(id)){
-                  AppReposteria.getReposteria().getListaInsumos().get(i).setNombre(nombre);
+          int index=0;
+          boolean bandera=false;
+          while (!bandera && index < insumos.size()) {
+              if (insumos.get(index).getId().indexOf(id) >= 0 ) {
+                  bandera = true;
                   encontrado=true;
+                  AppReposteria.getReposteria().getListaInsumos().get(index).setNombre(nombre);
               }
+              index++;
           }
           if (encontrado){
               Alert alert= new Alert(Alert.AlertType.INFORMATION);
@@ -98,10 +102,12 @@ public class UpdateSuppliesController {
                 String medida = unitComboBox.getValue();
                 boolean encontrado = false;
                 ArrayList<Insumo> listaInsumos = AppReposteria.getReposteria().getListaInsumos();
-                for (short i = 0; i < listaInsumos.size(); i++) {
-                    if (id.equals(AppReposteria.getReposteria().getListaInsumos().get(i).getId())) {
-                        encontrado = true;
-                        Insumo insumo = AppReposteria.getReposteria().getListaInsumos().get(i);
+                int index=0;
+                boolean bandera=false;
+                while (!bandera && index < listaInsumos.size()) {
+                    if (listaInsumos.get(index).getId().indexOf(id) >= 0 ) {
+                        encontrado=true;
+                        Insumo insumo = AppReposteria.getReposteria().getListaInsumos().get(index);
                         if (medida.equals("Unidad")) {
                             if (insumo instanceof InsumoPorKiloOLitro) {
                                 int cantidad = (int) (((InsumoPorKiloOLitro) insumo).getCantidad());
@@ -109,7 +115,7 @@ public class UpdateSuppliesController {
                                 String nombre = insumo.getNombre();
                                 Insumo insumoTemporal = new InsumosPorUnidad(nombre, medida, cantidad);
                                 insumoTemporal.setId(idRescatada);
-                                AppReposteria.getReposteria().getListaInsumos().set(i, insumoTemporal);
+                                AppReposteria.getReposteria().getListaInsumos().set(index, insumoTemporal);
                                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                                 alert.setTitle("Exito");
                                 alert.setContentText("La unidad de medida se ha editado con exito");
@@ -127,23 +133,28 @@ public class UpdateSuppliesController {
                                 String idRescatada = insumo.getId();
                                 Insumo insumoTemporal = new InsumoPorKiloOLitro(nombre, medida, cantidad);
                                 insumoTemporal.setId(idRescatada);
-                                AppReposteria.getReposteria().getListaInsumos().set(i, insumoTemporal);
+                                AppReposteria.getReposteria().getListaInsumos().set(index, insumoTemporal);
                                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                                 alert.setTitle("Exito");
                                 alert.setContentText("La unidad de medida se ha editado con exito");
                                 alert.showAndWait();
                             } else {
-                                if (medida.equals(AppReposteria.getReposteria().getListaInsumos().get(i).getUnidadMedida())) {
+                                if (medida.equals(AppReposteria.getReposteria().getListaInsumos().get(index).getUnidadMedida())) {
                                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
                                     alert.setTitle("¿?");
                                     alert.setContentText("Esta medida ya le pertenece a este insumo...");
                                     alert.showAndWait();
                                 } else {
-                                    AppReposteria.getReposteria().getListaInsumos().get(i).setUnidadMedida(medida);
+                                    AppReposteria.getReposteria().getListaInsumos().get(index).setUnidadMedida(medida);
+                                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                                    alert.setTitle("Exito");
+                                    alert.setContentText("La unidad de medida se ha editado con exito");
+                                    alert.showAndWait();
                                 }
                             }
                         }
                     }
+                    index++;
                 }
                 if (!encontrado) {
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -174,16 +185,19 @@ public class UpdateSuppliesController {
         boolean encontrado= false;
         ArrayList<Insumo> insumos;
         insumos = AppReposteria.getReposteria().getListaInsumos();
-        for (short i =0; i<insumos.size(); i++){
-            if (id.equals(AppReposteria.getReposteria().getListaInsumos().get(i).getId())){
-                Insumo insumo= AppReposteria.getReposteria().getListaInsumos().get(i);
+        boolean bandera = false;
+        int index = 0;
+        while (!bandera && index < insumos.size()) {
+            if (insumos.get(index).getId().indexOf(id) >= 0 ) {
+                bandera = true;
+                Insumo insumo= AppReposteria.getReposteria().getListaInsumos().get(index);
                 if(insumo instanceof InsumosPorUnidad){
                     try {
                         InsumosPorUnidad insumoTemporal = (InsumosPorUnidad) insumo;
                         int cantidad = Integer.parseInt(unitExtentInput.getText());
                         insumoTemporal.setCantidadPorUnidad(cantidad);
                         insumo = (Insumo) insumoTemporal;
-                        AppReposteria.getReposteria().getListaInsumos().set(i, insumo);
+                        AppReposteria.getReposteria().getListaInsumos().set(index, insumo);
                     }
                     catch (Exception e){
                         Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -197,10 +211,11 @@ public class UpdateSuppliesController {
                     double cantidad = Double.parseDouble(unitExtentInput.getText());
                     insumoTemporal.setCantidad(cantidad);
                     insumo=(Insumo)insumoTemporal;
-                    AppReposteria.getReposteria().getListaInsumos().set(i,insumo);
+                    AppReposteria.getReposteria().getListaInsumos().set(index,insumo);
                 }
                 encontrado = true;
             }
+            index++;
         }
         if (encontrado){
             Alert alert= new Alert(Alert.AlertType.INFORMATION);

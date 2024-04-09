@@ -76,37 +76,43 @@ public class AddOrdersHomeController {
            boolean error=false;
            try {
                fechaDeEntrega=dateOrderDatePicker.getValue();
-               error = true;
            }catch (Exception e){
                Alert alert = new Alert(Alert.AlertType.INFORMATION);
                alert.setTitle("Error");
                alert.setContentText("Ingrese la fecha correctamente: dd/mm/aaaa"+e.getMessage());
                alert.showAndWait();
+               error = true;
            }
            try {
                horaDeEntrega=LocalTime.parse(timeOrderInput.getText());
-               error = true;
            }catch (Exception e){
                Alert alert = new Alert(Alert.AlertType.INFORMATION);
                alert.setTitle("Error");
                alert.setContentText("Ingrese la hora correctamente: hh:mm:ss(los segundos son opcionales)"+e.getMessage());
                alert.showAndWait();
+               error = true;
            }
            try {
                costoEnvio= Double.parseDouble(shippingCostInput.getText());
-               error=true;
            }catch (Exception e){
                Alert alert = new Alert(Alert.AlertType.INFORMATION);
                alert.setTitle("Error");
                alert.setContentText("Ingrese solo valores numericos"+e.getMessage());
                alert.showAndWait();
+               error = true;
            }
            if (!error){
                Pedido pedido = new PedidoADomicilio(nombreCliente,fechaDeEntrega,horaDeEntrega,desingProducto,estatus,nombreProducto,nombreDomicilio,costoEnvio,referencia);
-               if (AppReposteria.getReposteria().getListaPedidos().add(pedido)){
+               if (AppReposteria.getReposteria().addPedido(pedido)){
                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
                    alert.setTitle("Exito");
                    alert.setContentText("Guardado exitosamente");
+                   alert.showAndWait();
+               }
+               else {
+                   Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                   alert.setTitle("Error");
+                   alert.setContentText("Ha habido un error al guardar, intente de nuevo, por favor");
                    alert.showAndWait();
                }
            }

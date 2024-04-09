@@ -125,59 +125,82 @@ public class Reposteria {
         public boolean eliminarProducto(String id){
                 boolean encontrado=false;
                 boolean status;
-                for (short i = 0; i<listaProductosPostreFrutas.size(); i++){
-                   if (listaProductosPostreFrutas.get(i).getId().equals(id)){
-                           status = false;
-                           listaProductosPostreFrutas.get(i).setStatus(status);
-                           encontrado = true;
-                   }
-                }
-                for (short i = 0; i<listaProductosCupcake.size(); i++){
-                        if (listaProductosCupcake.get(i).getId().equals(id)){
-                                status = false;
-                                listaProductosCupcake.get(i).setStatus(status);
-                                encontrado = true;
+                boolean bandera = false;
+                int index = 0;
+                while (!bandera && index < listaProductosPostreFrutas.size()) {
+                        if (listaProductosPostreFrutas.get(index).getId().indexOf(id) >= 0 ) {
+                                 bandera = true;
+                                 status = false;
+                                 encontrado=true;
+                                 listaProductosPostreFrutas.get(index).setStatus(status);
                         }
+                        index++;
                 }
-                for (short i = 0; i<listaProductosCarlota.size(); i++){
-                        if (listaProductosCarlota.get(i).getId().equals(id)){
+                index=0;
+                while (!bandera && index < listaProductosCupcake.size()) {
+                        if (listaProductosCupcake.get(index).getId().indexOf(id) >= 0 ) {
+                                bandera = true;
                                 status = false;
-                                listaProductosCarlota.get(i).setStatus(status);
-                                encontrado = true;
+                                encontrado=true;
+                                listaProductosCupcake.get(index).setStatus(status);
                         }
+                        index++;
                 }
-                for (short i = 0; i<listaProductosFlan.size(); i++){
-                        if (listaProductosFlan.get(i).getId().equals(id)){
+                index = 0;
+                while (!bandera && index < listaProductosCarlota.size()) {
+                        if (listaProductosCarlota.get(index).getId().indexOf(id) >= 0 ) {
+                                bandera = true;
                                 status = false;
-                                listaProductosFlan.get(i).setStatus(status);
-                                encontrado = true;
+                                encontrado=true;
+                                listaProductosCarlota.get(index).setStatus(status);
                         }
+                        index++;
                 }
-                for (short i = 0; i<listaProductosPastel.size(); i++){
-                        if (listaProductosPastel.get(i).getId().equals(id)){
+                index=0;
+                while (!bandera && index < listaProductosFlan.size()) {
+                        if (listaProductosFlan.get(index).getId().indexOf(id) >= 0 ) {
+                                bandera = true;
                                 status = false;
-                                listaProductosPastel.get(i).setStatus(status);
-                                encontrado = true;
+                                encontrado=true;
+                                listaProductosFlan.get(index).setStatus(status);
                         }
+                        index++;
                 }
-                for (short i = 0; i<listaProductosGelatina.size(); i++){
-                        if (listaProductosGelatina.get(i).getId().equals(id)){
+                index =0;
+                while (!bandera && index < listaProductosPastel.size()) {
+                        if (listaProductosPastel.get(index).getId().indexOf(id) >= 0 ) {
+                                bandera = true;
                                 status = false;
-                                listaProductosGelatina.get(i).setStatus(status);
-                                encontrado = true;
+                                encontrado=true;
+                                listaProductosPastel.get(index).setStatus(status);
                         }
+                        index++;
+                }
+                index=0;
+                while (!bandera && index < listaProductosGelatina.size()) {
+                        if (listaProductosGelatina.get(index).getId().indexOf(id) >= 0 ) {
+                                bandera = true;
+                                status = false;
+                                encontrado=true;
+                                listaProductosGelatina.get(index).setStatus(status);
+                        }
+                        index++;
                 }
                 return encontrado;
         }
         public boolean eliminarInsumo(String id){
                 boolean encontrado=false;
                 boolean status;
-                for (short i = 0; i<listaInsumos.size(); i++){
-                        if (listaInsumos.get(i).getId().equals(id)) {
+                int index=0;
+                boolean bandera=false;
+                while (!bandera && index < listaInsumos.size()) {
+                        if (listaInsumos.get(index).getId().indexOf(id) >= 0 ) {
+                                bandera = true;
                                 status = false;
-                                listaInsumos.get(i).setStatus(status);
-                                encontrado = true;
+                                encontrado=true;
+                                listaInsumos.get(index).setStatus(status);
                         }
+                        index++;
                 }
                 return encontrado;
         }
