@@ -5,6 +5,7 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -28,6 +29,9 @@ public class EditCarlotaController {
     private ImageView exitImage;
 
     @FXML
+    private TextField idSearchInput;
+
+    @FXML
     private Button increaseEditBtn;
 
     @FXML
@@ -43,10 +47,16 @@ public class EditCarlotaController {
     private TextField priceInput;
 
     @FXML
-    private Button sizeEditBtn;
+    private Button searchIDBtn;
 
     @FXML
-    private TextField sizeInput;
+    private Button sizeEditBtn;
+    //Estos son combo box para mejorar
+    @FXML
+    private ComboBox<?> sizeComboBox;
+
+    @FXML
+    private ComboBox<?> typeComboBox;
 
     @FXML
     private Button typeEditBtn;
@@ -87,6 +97,11 @@ public class EditCarlotaController {
 
     @FXML
     void onClickIncrease(MouseEvent event) {
+
+    }
+
+    @FXML
+    void onClickSearch(MouseEvent event) {
 
     }
 

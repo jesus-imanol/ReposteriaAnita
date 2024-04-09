@@ -102,26 +102,14 @@ public class AddCupCakeController {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.close();
     }
-    private void addValidator(TextField field) {
-        field.textProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                if (newValue.trim().isEmpty()) {
-                    field.setStyle("-fx-border-color: red ; -fx-border-width: 2px ;");
-                } else {
-                    field.setStyle("");
-                }
-            }
-        });
-    }
+
     @FXML
     void initialize() {
-        addValidator(amountInput);
-        addValidator(priceInput);
-        addValidator(nameInput);
-        addValidator(typeInput);
-        addValidator(designInput);
-        addValidator(stuffedInput);
+        AppReposteria.addValidator(amountInput);
+        AppReposteria.addValidator(priceInput);
+        AppReposteria.addValidator(nameInput);
+        AppReposteria.addValidator(designInput);
+        AppReposteria.addValidator(stuffedInput);
     }
 
 }

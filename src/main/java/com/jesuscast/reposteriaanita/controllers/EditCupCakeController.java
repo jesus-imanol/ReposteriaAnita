@@ -19,9 +19,6 @@ public class EditCupCakeController {
     private URL location;
 
     @FXML
-    private ImageView addProductImage;
-
-    @FXML
     private TextField amountInput;
 
     @FXML
@@ -62,12 +59,6 @@ public class EditCupCakeController {
 
     @FXML
     private TextField stuffedInput;
-
-    @FXML
-    void onClickAddProduct(MouseEvent event) {
-
-    }
-
     @FXML
     void onClickDecrease(MouseEvent event) {
 

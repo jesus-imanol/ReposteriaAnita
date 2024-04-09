@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" style="-fx-background-color: #FFD973;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jesuscast.reposteriaanita.controllers.EditCupCakeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" style="-fx-background-color: #FFD973;" stylesheets="@styles/styleForEditCupcake.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jesuscast.reposteriaanita.controllers.EditCupCakeController">
    <children>
       <Pane layoutY="-1.0" prefHeight="79.0" prefWidth="1200.0" style="-fx-background-color: #48A7FA;">
          <children>
@@ -64,11 +64,6 @@
             <Font name="Montserrat Regular" size="12.0" />
          </font>
       </Label>
-      <ImageView fx:id="addProductImage" fitHeight="133.0" fitWidth="262.0" layoutX="636.0" layoutY="550.0" onMouseClicked="#onClickAddProduct" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@img/boton-agregar-producto.png" />
-         </image>
-      </ImageView>
       <ImageView fx:id="exitImage" fitHeight="133.0" fitWidth="262.0" layoutX="889.0" layoutY="549.0" onMouseClicked="#onClickExit" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@img/salir.png" />
@@ -85,11 +80,11 @@
          </image>
       </ImageView>
       <Button fx:id="editNameBtn" layoutX="436.0" layoutY="182.0" mnemonicParsing="false" onMouseClicked="#onClickEditName" prefHeight="32.0" prefWidth="70.0" styleClass="btns" text="Editar" />
-      <Button fx:id="increaseBtn" layoutX="439.0" layoutY="238.0" mnemonicParsing="false" onMouseClicked="#onClickIncrease" prefHeight="17.0" prefWidth="120.0" styleClass="btns" text="Aumentar cantidad" />
+      <Button fx:id="increaseBtn" layoutX="439.0" layoutY="238.0" mnemonicParsing="false" onMouseClicked="#onClickIncrease" prefHeight="32.0" prefWidth="181.0" styleClass="btns" text="Aumentar cantidad" />
       <Button fx:id="priceEditBtn" layoutX="445.0" layoutY="318.0" mnemonicParsing="false" onMouseClicked="#onClickEditPrice" prefHeight="32.0" prefWidth="70.0" styleClass="btns" text="Editar" />
       <Button fx:id="stuffedEditBtn" layoutX="447.0" layoutY="387.0" mnemonicParsing="false" onMouseClicked="#onClickEditSuffed" prefHeight="32.0" prefWidth="70.0" styleClass="btns" text="Editar" />
       <Button fx:id="designEditBtn" layoutX="447.0" layoutY="450.0" mnemonicParsing="false" onMouseClicked="#onClickEditDesign" prefHeight="32.0" prefWidth="70.0" styleClass="btns" text="Editar" />
-      <Button fx:id="decreaseBtn" layoutX="440.0" layoutY="268.0" mnemonicParsing="false" onMouseClicked="#onClickDecrease" prefHeight="17.0" prefWidth="120.0" styleClass="btns" text="Disminuir cantidad" />
+      <Button fx:id="decreaseBtn" layoutX="440.0" layoutY="272.0" mnemonicParsing="false" onMouseClicked="#onClickDecrease" prefHeight="32.0" prefWidth="181.0" styleClass="btns" text="Disminuir cantidad" />
       <TextField fx:id="idSearchInput" layoutX="805.0" layoutY="189.0" prefHeight="40.0" prefWidth="378.0" style="-fx-background-color: #C9CCCD; -fx-border-color: black;" />
       <Label layoutX="807.0" layoutY="158.0" prefHeight="32.0" prefWidth="328.0" text="Ingrese el Id del cupcake para buscar" />
       <Button fx:id="searchIDBtn" layoutX="808.0" layoutY="233.0" mnemonicParsing="false" onMouseClicked="#onClickSearch" prefHeight="25.0" prefWidth="83.0" styleClass="btns" text="Buscar" />
