@@ -65,7 +65,6 @@ public class EditCupCakeController {
 
     @FXML
     void onClickAddProduct(MouseEvent event) {
-
     }
 
     @FXML

@@ -39,19 +39,19 @@ public class Pedido {
         this.nombreCliente = nombreCliente;
     }
 
-    public LocalDate getFechaDePedido() {
+    public LocalDate getFechaDeEntrega() {
         return fechaDeEntrega;
     }
 
-    public void setFechaDePedido(LocalDate fechaDePedido) {
+    public void setFechaDeEntrega(LocalDate fechaDePedido) {
         this.fechaDeEntrega = fechaDePedido;
     }
 
-    public LocalTime getHoraDePedido() {
+    public LocalTime getHoraDeEntrega() {
         return horaDeEntrega;
     }
 
-    public void setHoraDePedido(LocalTime horaDePedido) {
+    public void setHoraDeEntrega(LocalTime horaDePedido) {
         this.horaDeEntrega = horaDePedido;
     }
 

@@ -65,7 +65,9 @@ public class EditCakeController {
 
     @FXML
     void onClickDecrease(MouseEvent event) {
+    if (amountInput.getText().trim().isEmpty()){
 
+    }
     }
 
     @FXML

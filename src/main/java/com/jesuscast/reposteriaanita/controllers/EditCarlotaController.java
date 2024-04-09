@@ -47,7 +47,6 @@ public class EditCarlotaController {
 
     @FXML
     private TextField sizeInput;
-
     @FXML
     private Button typeEditBtn;
 

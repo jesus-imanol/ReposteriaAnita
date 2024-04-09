@@ -188,20 +188,35 @@ public class Reposteria {
                 }
                 return encontrado;
         }
-        public boolean eliminarInsumo(String id){
-                boolean encontrado=false;
+        public boolean eliminarInsumo(String id) {
+                boolean encontrado = false;
                 boolean status;
-                int index=0;
-                boolean bandera=false;
+                int index = 0;
+                boolean bandera = false;
                 while (!bandera && index < listaInsumos.size()) {
-                        if (listaInsumos.get(index).getId().indexOf(id) >= 0 ) {
+                        if (listaInsumos.get(index).getId().indexOf(id) >= 0) {
                                 bandera = true;
                                 status = false;
-                                encontrado=true;
+                                encontrado = true;
                                 listaInsumos.get(index).setStatus(status);
                         }
                         index++;
                 }
                 return encontrado;
+        }
+        public void ordenamiento() {
+                Pedido pedidoTemporal;
+                boolean cambios;
+                do {
+                 cambios=false;
+                 for (int i = 0; i<listaPedidos.size()-1;i++){
+                         if (listaPedidos.get(i).getFechaDeEntrega().isAfter(listaPedidos.get(i+1).getFechaDeEntrega())){
+                                 pedidoTemporal=listaPedidos.get(i);
+                                 listaPedidos.set(i,listaPedidos.get(i+1));
+                                 listaPedidos.set(i+1,pedidoTemporal);
+                                 cambios=true;
+                         }
+                 }
+                }while (cambios);
         }
 }
