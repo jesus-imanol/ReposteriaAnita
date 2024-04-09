@@ -156,7 +156,10 @@ public class EditCarlotaController {
             }
         }
     }
+    @FXML
+    void onClickEditSize(MouseEvent event) {
 
+    }
     @FXML
     void onClickEditPrice(MouseEvent event) {
         if (priceInput.getText().trim().isEmpty() || idSearchInput.getText().trim().isEmpty()){

@@ -65,7 +65,10 @@ public class EditFlanController {
 
     @FXML
     private ComboBox<?> sizeComboBox;
+    @FXML
+    void onClickEditAmountPeople(MouseEvent event) {
 
+    }
     @FXML
     void onClickDecrease(MouseEvent event) {
         if (amountInput.getText().trim().isEmpty() ||idSearchInput.getText().trim().isEmpty()){
