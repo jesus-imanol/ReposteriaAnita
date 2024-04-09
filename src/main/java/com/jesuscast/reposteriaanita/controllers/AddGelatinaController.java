@@ -59,14 +59,14 @@ public class AddGelatinaController {
         else {
             String nombre = nameInput.getText();
             String size = sizeComboBox.getValue();
-            String sabor = typeComboBox.getValue();
+            String tipo = typeComboBox.getValue();
             int cantidad;
             double precio;
             try{
                 cantidad= Integer.parseInt(amountInput.getText());
                 precio = Double.parseDouble(priceInput.getText());
                 if (cantidad>=0 && precio>=0) {
-                    Gelatina gelatina = new Gelatina(nombre, cantidad, precio, size, sabor);
+                    Gelatina gelatina = new Gelatina(nombre, cantidad, precio, size, tipo);
                     if (AppReposteria.getReposteria().addGelatina(gelatina)) {
                         Alert alert = new Alert(Alert.AlertType.INFORMATION);
                         alert.setTitle("Exito");

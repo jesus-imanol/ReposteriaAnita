@@ -226,7 +226,7 @@ public class Reposteria {
                 int index = 0;
                 boolean bandera = false;
                 while (!bandera && index < listaPedidos.size()) {
-                        if (listaPedidos.get(index).getId().indexOf(id) >= 0&& !listaPedidos.get(index).getStatus().equals("Cancelado")) {
+                        if (listaPedidos.get(index).getId().indexOf(id) >= 0&& !listaPedidos.get(index).getStatus().equals("Cancelado") && !listaPedidos.get(index).getStatus().equals("Entregado")) {
                                 bandera = true;
                                 status = "Cancelado";
                                 encontrado = true;

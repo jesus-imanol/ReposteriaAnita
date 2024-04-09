@@ -2,11 +2,11 @@ package com.jesuscast.reposteriaanita.models;
 
 public class Gelatina extends Producto {
     private String size;
-    private String sabor;
-    public Gelatina(String nombreProducto, int cantidad, double precio,String size, String sabor) {
+    private String tipo;
+    public Gelatina(String nombreProducto, int cantidad, double precio,String size, String tipo) {
         super(nombreProducto, cantidad, precio);
         this.size = size;
-        this.sabor = sabor;
+        this.tipo = tipo;
     }
 
     public String getSize() {
@@ -15,5 +15,13 @@ public class Gelatina extends Producto {
 
     public void setSize(String size) {
         this.size = size;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 }

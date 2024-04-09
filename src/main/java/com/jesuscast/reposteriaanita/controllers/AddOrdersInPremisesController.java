@@ -75,7 +75,7 @@ public class AddOrdersInPremisesController {
          }catch (Exception e){
              Alert alert = new Alert(Alert.AlertType.INFORMATION);
              alert.setTitle("Error");
-             alert.setContentText("Ingrese la hpra correctamente: hh:mm:ss(segundos opcionales)"+e.getMessage());
+             alert.setContentText("Ingrese la hora correctamente: hh:mm:ss(segundos opcionales)"+e.getMessage());
              alert.showAndWait();
              error = true;
          }
