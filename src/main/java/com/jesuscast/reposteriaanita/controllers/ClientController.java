@@ -58,7 +58,7 @@ public class ClientController {
 
     @FXML
     void onClickUpdateClient(MouseEvent event) {
-
+        AppReposteria.newStage("update-client-view","Actualizar el cliente");
     }
 
     @FXML

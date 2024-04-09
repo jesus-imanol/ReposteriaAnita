@@ -64,32 +64,25 @@
             <Image url="@img/salir.png" />
          </image>
       </ImageView>
-      <TextField fx:id="amountPersonInput" layoutX="41.0" layoutY="447.0" prefHeight="40.0" prefWidth="412.0" style="-fx-background-color: #C9CCCD; -fx-border-color: black;" />
-      <Label layoutX="42.0" layoutY="425.0" prefHeight="17.0" prefWidth="143.0" text="Cantidad de personas">
-         <font>
-            <Font name="Montserrat Regular" size="12.0" />
-         </font>
-      </Label>
       <ImageView fitHeight="317.0" fitWidth="282.0" layoutX="687.0" layoutY="262.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@img/flan.png" />
          </image>
       </ImageView>
-      <Label layoutX="42.0" layoutY="497.0" prefHeight="17.0" prefWidth="143.0" text="Tamaño">
+      <Label layoutX="42.0" layoutY="426.0" prefHeight="17.0" prefWidth="143.0" text="Tamaño">
          <font>
             <Font name="Montserrat Regular" size="12.0" />
          </font>
       </Label>
-      <ComboBox fx:id="sizeComboBox" layoutX="39.0" layoutY="517.0" prefHeight="40.0" prefWidth="412.0" style="-fx-background-color: #C9CCCD; -fx-border-color: black;" />
+      <ComboBox fx:id="sizeComboBox" layoutX="39.0" layoutY="446.0" prefHeight="40.0" prefWidth="412.0" style="-fx-background-color: #C9CCCD; -fx-border-color: black;" />
       <Button fx:id="editNameBtn" layoutX="469.0" layoutY="176.0" mnemonicParsing="false" onMouseClicked="#onClickEditName" prefHeight="32.0" prefWidth="70.0" styleClass="btns" text="Editar" />
       <Button fx:id="increaseBtn" layoutX="472.0" layoutY="227.0" mnemonicParsing="false" onMouseClicked="#onClickIncrease" prefHeight="32.0" prefWidth="196.0" styleClass="btns" text="Aumentar cantidad" />
       <Button fx:id="priceEditBtn" layoutX="478.0" layoutY="312.0" mnemonicParsing="false" onMouseClicked="#onClickEditPrice" prefHeight="32.0" prefWidth="70.0" styleClass="btns" text="Editar" />
       <Button fx:id="design" layoutX="480.0" layoutY="381.0" mnemonicParsing="false" onMouseClicked="#onClickEditDesign" prefHeight="32.0" prefWidth="70.0" styleClass="btns" text="Editar" />
-      <Button fx:id="amountPeopleEditBtn" layoutX="480.0" layoutY="444.0" mnemonicParsing="false" onMouseClicked="#onClickEditAmountPeople" prefHeight="32.0" prefWidth="70.0" styleClass="btns" text="Editar" />
       <Button fx:id="decreaseBtn" layoutX="473.0" layoutY="262.0" mnemonicParsing="false" onMouseClicked="#onClickDecrease" prefHeight="32.0" prefWidth="196.0" styleClass="btns" text="Disminuir cantidad" />
       <TextField fx:id="idSearchInput" layoutX="776.0" layoutY="179.0" prefHeight="40.0" prefWidth="378.0" style="-fx-background-color: #C9CCCD; -fx-border-color: black;" />
       <Label layoutX="778.0" layoutY="148.0" prefHeight="32.0" prefWidth="328.0" text="Ingrese los 3 primeros digitos de la ID para buscar el flan" />
       <Button fx:id="searchIDBtn" layoutX="779.0" layoutY="223.0" mnemonicParsing="false" onMouseClicked="#onClickSearch" prefHeight="25.0" prefWidth="83.0" styleClass="btns" text="Buscar" />
-      <Button fx:id="editSize" layoutX="483.0" layoutY="520.0" mnemonicParsing="false" onMouseClicked="#onClickEditSize" prefHeight="32.0" prefWidth="70.0" styleClass="btns" text="Editar" />
+      <Button fx:id="editSize" layoutX="483.0" layoutY="449.0" mnemonicParsing="false" onMouseClicked="#onClickEditSize" prefHeight="32.0" prefWidth="70.0" styleClass="btns" text="Editar" />
    </children>
 </AnchorPane>

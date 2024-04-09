@@ -73,17 +73,11 @@
             <Font name="Montserrat Regular" size="12.0" />
          </font>
       </Label>
-      <TextField fx:id="amountPersonInput" layoutX="51.0" layoutY="457.0" prefHeight="40.0" prefWidth="412.0" style="-fx-background-color: #C9CCCD; -fx-border-color: black;" />
-      <Label layoutX="52.0" layoutY="435.0" prefHeight="17.0" prefWidth="143.0" text="Cantidad de personas">
+      <Label layoutX="52.0" layoutY="440.0" prefHeight="17.0" prefWidth="143.0" text="Tamaño">
          <font>
             <Font name="Montserrat Regular" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="52.0" layoutY="507.0" prefHeight="17.0" prefWidth="143.0" text="Tamaño">
-         <font>
-            <Font name="Montserrat Regular" size="12.0" />
-         </font>
-      </Label>
-      <ComboBox fx:id="sizeComboBox" layoutX="49.0" layoutY="527.0" prefHeight="40.0" prefWidth="412.0" style="-fx-background-color: #C9CCCD; -fx-border-color: black;" />
+      <ComboBox fx:id="sizeComboBox" layoutX="49.0" layoutY="460.0" prefHeight="40.0" prefWidth="412.0" style="-fx-background-color: #C9CCCD; -fx-border-color: black;" />
    </children>
 </AnchorPane>
