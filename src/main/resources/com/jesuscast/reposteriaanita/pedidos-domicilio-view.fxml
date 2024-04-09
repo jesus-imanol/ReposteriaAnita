@@ -45,7 +45,7 @@
       <TextField fx:id="clienteOrderinput" layoutX="128.0" layoutY="277.0" prefHeight="40.0" prefWidth="342.0" />
       <Label layoutX="136.0" layoutY="257.0" styleClass="labels-input" text="Cliente" />
       <Label layoutX="131.0" layoutY="340.0" styleClass="labels-input" text="Fecha de entrega" />
-      <Label layoutX="132.0" layoutY="418.0" styleClass="labels-input" text="Hora del pedido" />
+      <Label layoutX="132.0" layoutY="418.0" styleClass="labels-input" text="Hora de entrega" />
       <Button fx:id="addOrdersBtn" layoutX="941.0" layoutY="621.0" mnemonicParsing="false" onMouseClicked="#onClickAddOrders" prefHeight="61.0" prefWidth="150.0" styleClass="addSuppliesBtn" text="Agregar pedido" />
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="733.0" layoutY="302.0" pickOnBounds="true" preserveRatio="true" />
       <DatePicker fx:id="dateOrderDatePicker" layoutX="130.0" layoutY="365.0" prefHeight="48.0" prefWidth="414.0" />
