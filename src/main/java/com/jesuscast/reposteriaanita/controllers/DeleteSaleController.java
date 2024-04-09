@@ -2,16 +2,16 @@ package com.jesuscast.reposteriaanita.controllers;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-
-import com.jesuscast.reposteriaanita.AppReposteria;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-public class SalesController {
+public class DeleteSaleController {
 
     @FXML
     private ResourceBundle resources;
@@ -20,47 +20,32 @@ public class SalesController {
     private URL location;
 
     @FXML
-    private ImageView addVentaImage;
-
-    @FXML
     private ImageView decorationImg;
 
     @FXML
-    private ImageView deleteVentaImage;
+    private Button deleteSaleBtn;
 
     @FXML
     private Button exitBtn;
 
     @FXML
-    private ImageView seeVentaImage;
+    private TextField idSearchInput;
 
     @FXML
-    private ImageView updateVentaImage;
+    private Label titulo1;
 
     @FXML
-    void OnClickSeeVenta(MouseEvent event) {
-
-    }
+    private Label titulo2;
 
     @FXML
-    void onClickAddVenta(MouseEvent event) {
-        AppReposteria.newStage("add-menu-ventas-view","Agregar ventas");
-    }
+    void onClickDeleteSale(MouseEvent event) {
 
-    @FXML
-    void onClickDeleteVenta(MouseEvent event) {
-        AppReposteria.newStage("delete-sale-view","Eliminar venta ");
     }
 
     @FXML
     void onClickExit(MouseEvent event) {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.close();
-    }
-
-    @FXML
-    void onClickUpdateVenta(MouseEvent event) {
-        AppReposteria.newStage("type-sales-update-pedidos-view","Actualizando un nuevo pedido");
     }
 
     @FXML

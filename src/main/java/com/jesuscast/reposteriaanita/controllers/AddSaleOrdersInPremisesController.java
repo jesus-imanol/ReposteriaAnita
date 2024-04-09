@@ -2,17 +2,15 @@ package com.jesuscast.reposteriaanita.controllers;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-
-import com.jesuscast.reposteriaanita.AppReposteria;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.image.ImageView;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-public class AddMenuSalesController {
+public class AddSaleOrdersInPremisesController {
 
     @FXML
     private ResourceBundle resources;
@@ -21,31 +19,38 @@ public class AddMenuSalesController {
     private URL location;
 
     @FXML
-    private ImageView decorationImg;
+    private Button addOrdersBtn;
 
     @FXML
-    private ImageView existVentaImage;
+    private TextField clienteOrderinput;
+
+    @FXML
+    private DatePicker dateCollected;
+
+    @FXML
+    private DatePicker dateOrderDatePicker;
+
+    @FXML
+    private TextField designProduct;
 
     @FXML
     private Button exitBtn;
 
     @FXML
-    private ImageView newVentaImage;
+    private TextField nameProductPeopleInput;
 
     @FXML
-    private Label titulo1;
+    private TextField premisesCollected;
 
     @FXML
-    private Label titulo2;
+    private TextField timeCollectedInput;
 
     @FXML
-    void OnClickNewVenta(MouseEvent event) {
-        AppReposteria.newStage("nuevo-venta-view","Agregar nueva venta");
-    }
+    private TextField timeOrderInput;
 
     @FXML
-    void onClickExistVenta(MouseEvent event) {
-        AppReposteria.newStage("tipo-existe-pedido-view","Agregar pedido ya existente");
+    void onClickAddOrders(MouseEvent event) {
+
     }
 
     @FXML
