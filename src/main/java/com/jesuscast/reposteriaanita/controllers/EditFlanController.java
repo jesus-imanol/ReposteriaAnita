@@ -249,6 +249,10 @@ public class EditFlanController {
                     encontrado=true;
                     String size =sizeComboBox.getValue();
                     AppReposteria.getReposteria().getListaProductosFlan().get(index).setSize(size);
+                    Alert alert= new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Éxito");
+                    alert.setContentText("El flan se ha editado exitosamente");
+                    alert.showAndWait();
                 }
                 index++;
             }

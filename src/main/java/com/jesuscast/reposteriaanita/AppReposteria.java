@@ -1,5 +1,6 @@
 package com.jesuscast.reposteriaanita;
 
+import com.jesuscast.reposteriaanita.models.ReporteVenta;
 import com.jesuscast.reposteriaanita.models.Reposteria;
 import javafx.animation.TranslateTransition;
 import javafx.beans.value.ChangeListener;
@@ -18,11 +19,13 @@ import org.kordamp.bootstrapfx.BootstrapFX;
 import java.io.IOException;
 public class AppReposteria extends javafx.application.Application {
     private static Reposteria reposteria = new Reposteria();
-
+    private static ReporteVenta reporteVenta = new ReporteVenta();
     public static Reposteria getReposteria() {
         return reposteria;
     }
-
+    public static ReporteVenta getReporteVenta(){
+        return reporteVenta;
+    }
     private static Stage stageView;
     private static Stage stageRoot;
 

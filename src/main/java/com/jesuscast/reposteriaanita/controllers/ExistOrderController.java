@@ -1,13 +1,16 @@
 package com.jesuscast.reposteriaanita.controllers;
 
 import java.net.URL;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
+
+import com.jesuscast.reposteriaanita.AppReposteria;
+import com.jesuscast.reposteriaanita.models.Pedido;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
-import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -48,7 +51,47 @@ public class ExistOrderController {
 
     @FXML
     void onClickAddPedido(MouseEvent event) {
-
+        if (idSearchInput.getText().trim().isEmpty() || timeCollectedInput.getText().isEmpty()||premisesCollectedInput.getText().isEmpty() || dateCollectedDatePicker.getValue()==null){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Se requieren datos");
+            alert.setContentText("Por favor complete los campos");
+            alert.showAndWait();
+        }else {
+            boolean encontrado = false;
+            String status;
+            int index = 0;
+            boolean bandera = false;
+            String id=idSearchInput.getText();
+            ArrayList<Pedido> listaPedidos = AppReposteria.getReposteria().getListaPedidos();
+            while (!bandera && index < listaPedidos.size()) {
+                if (listaPedidos.get(index).getId().indexOf(id) >= 0&& !listaPedidos.get(index).getStatus().equals("Cancelado") && !listaPedidos.get(index).getStatus().equals("Entregado")) {
+                    String localDeEntrega = premisesCollectedInput.getText();
+                    boolean error = false;
+                    LocalDate fechaDeRecogido;
+                    LocalTime horaDeRecogido;
+                    try {
+                        fechaDeRecogido=dateCollectedDatePicker.getValue();
+                    }catch (Exception e){
+                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                        alert.setTitle("Error");
+                        alert.setContentText("Ingrese la fecha correctamente: dd/mm/aaaa"+e.getMessage());
+                        alert.showAndWait();
+                        error = true;
+                    }
+                    try {
+                        horaDeRecogido =LocalTime.parse(timeCollectedInput.getText());
+                    }catch (Exception e){
+                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                        alert.setTitle("Error");
+                        alert.setContentText("Ingrese la hora correctamente: hh:mm:ss(segundos opcionales)"+e.getMessage());
+                        alert.showAndWait();
+                        error = true;
+                    }
+                    bandera = true;
+                }
+                index++;
+            }
+        }
     }
 
     @FXML
