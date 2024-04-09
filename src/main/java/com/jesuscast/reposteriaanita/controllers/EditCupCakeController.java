@@ -61,8 +61,6 @@ public class EditCupCakeController {
     @FXML
     private TextField priceInput;
 
-    @FXML
-    private Button searchIDBtn;
 
     @FXML
     private Button stuffedEditBtn;

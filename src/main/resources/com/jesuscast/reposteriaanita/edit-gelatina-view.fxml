@@ -83,6 +83,5 @@
       <ComboBox fx:id="sizeComboBox" layoutX="40.0" layoutY="421.0" prefHeight="40.0" prefWidth="412.0" style="-fx-background-color: #C9CCCD; -fx-border-color: black;" />
       <TextField fx:id="idSearchInput" layoutX="791.0" layoutY="188.0" prefHeight="40.0" prefWidth="378.0" style="-fx-background-color: #C9CCCD; -fx-border-color: black;" />
       <Label layoutX="793.0" layoutY="157.0" prefHeight="32.0" prefWidth="328.0" text="Ingrese los 3 primeros digitos de la ID para buscar la gelatina" />
-      <Button fx:id="searchIDBtn" layoutX="794.0" layoutY="232.0" mnemonicParsing="false" onMouseClicked="#onClickSearch" prefHeight="25.0" prefWidth="83.0" styleClass="btns" text="Buscar" />
    </children>
 </AnchorPane>

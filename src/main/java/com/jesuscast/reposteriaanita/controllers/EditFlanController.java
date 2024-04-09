@@ -62,9 +62,6 @@ public class EditFlanController {
     private TextField priceInput;
 
     @FXML
-    private Button searchIDBtn;
-
-    @FXML
     private ComboBox<String> sizeComboBox;
     @FXML
     void onClickEditAmountPeople(MouseEvent event) {
@@ -322,10 +319,6 @@ public class EditFlanController {
         }
     }
 
-    @FXML
-    void onClickSearch(MouseEvent event) {
-
-    }
 
     @FXML
     void initialize() {

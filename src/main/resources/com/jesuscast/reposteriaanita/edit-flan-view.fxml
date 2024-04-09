@@ -82,7 +82,6 @@
       <Button fx:id="decreaseBtn" layoutX="473.0" layoutY="262.0" mnemonicParsing="false" onMouseClicked="#onClickDecrease" prefHeight="32.0" prefWidth="196.0" styleClass="btns" text="Disminuir cantidad" />
       <TextField fx:id="idSearchInput" layoutX="776.0" layoutY="179.0" prefHeight="40.0" prefWidth="378.0" style="-fx-background-color: #C9CCCD; -fx-border-color: black;" />
       <Label layoutX="778.0" layoutY="148.0" prefHeight="32.0" prefWidth="328.0" text="Ingrese los 3 primeros digitos de la ID para buscar el flan" />
-      <Button fx:id="searchIDBtn" layoutX="779.0" layoutY="223.0" mnemonicParsing="false" onMouseClicked="#onClickSearch" prefHeight="25.0" prefWidth="83.0" styleClass="btns" text="Buscar" />
       <Button fx:id="editSize" layoutX="483.0" layoutY="449.0" mnemonicParsing="false" onMouseClicked="#onClickEditSize" prefHeight="32.0" prefWidth="70.0" styleClass="btns" text="Editar" />
    </children>
 </AnchorPane>

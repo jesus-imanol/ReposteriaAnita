@@ -46,8 +46,6 @@ public class EditGelatinaController {
     @FXML
     private TextField priceInput;
 
-    @FXML
-    private Button searchIDBtn;
 
     @FXML
     private ComboBox<?> sizeComboBox;
@@ -97,10 +95,6 @@ public class EditGelatinaController {
 
     }
 
-    @FXML
-    void onClickSearch(MouseEvent event) {
-
-    }
 
     @FXML
     void initialize() {

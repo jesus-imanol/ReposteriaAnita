@@ -76,6 +76,5 @@
       <Button fx:id="decreaseBtn" layoutX="475.0" layoutY="330.0" mnemonicParsing="false" onMouseClicked="#onClickDecrease" prefHeight="32.0" prefWidth="196.0" styleClass="btns" text="Disminuir cantidad" />
       <TextField fx:id="idSearchInput" layoutX="800.0" layoutY="197.0" prefHeight="40.0" prefWidth="378.0" style="-fx-background-color: #C9CCCD; -fx-border-color: black;" />
       <Label layoutX="802.0" layoutY="166.0" prefHeight="32.0" prefWidth="328.0" text="Ingrese los 3 digitos de la ID para buscar el postre de frutas" />
-      <Button fx:id="searchIDBtn" layoutX="803.0" layoutY="241.0" mnemonicParsing="false" onMouseClicked="#onClickSearch" prefHeight="25.0" prefWidth="83.0" styleClass="btns" text="Buscar" />
    </children>
 </AnchorPane>

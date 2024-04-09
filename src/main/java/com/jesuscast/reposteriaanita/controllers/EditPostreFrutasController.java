@@ -47,9 +47,6 @@ public class EditPostreFrutasController {
     private TextField priceInput;
 
     @FXML
-    private Button searchIDBtn;
-
-    @FXML
     private ComboBox<?> sizeComboBox;
 
     @FXML
@@ -83,11 +80,6 @@ public class EditPostreFrutasController {
 
     @FXML
     void onClickIncrease(MouseEvent event) {
-
-    }
-
-    @FXML
-    void onClickSearch(MouseEvent event) {
 
     }
 

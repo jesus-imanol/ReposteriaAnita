@@ -5,9 +5,12 @@ import java.util.ResourceBundle;
 
 import com.jesuscast.reposteriaanita.AppReposteria;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
+import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 public class MenuVerProductosController {
 
@@ -16,6 +19,9 @@ public class MenuVerProductosController {
 
     @FXML
     private URL location;
+    @FXML
+    private Button exitBtn;
+
 
     @FXML
     private ImageView verCarlotaImage;
@@ -63,6 +69,11 @@ public class MenuVerProductosController {
     @FXML
     void onClickSeePostreFrutas(MouseEvent event) {
         AppReposteria.newStage("see-postreFrutas-view","Ver postre de frutas");
+    }
+    @FXML
+    void onClickExit(MouseEvent event) {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.close();
     }
 
     @FXML
