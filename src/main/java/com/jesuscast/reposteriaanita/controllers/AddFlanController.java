@@ -106,7 +106,6 @@ public class AddFlanController {
     void initialize() {
         sizeComboBox.getItems().addAll("Mediano", "Grande");
         AppReposteria.addValidator(amountInput);
-        AppReposteria.addValidator(amountPersonInput);
         AppReposteria.addValidator(designInput);
         AppReposteria.addValidator(nameInput);
         AppReposteria.addValidator(priceInput);
