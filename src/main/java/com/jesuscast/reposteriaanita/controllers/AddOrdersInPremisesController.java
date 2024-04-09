@@ -27,10 +27,6 @@ public class AddOrdersInPremisesController {
 
     @FXML
     private TextField clienteOrderinput;
-
-    @FXML
-    private DatePicker dateCollected;
-
     @FXML
     private DatePicker dateOrderDatePicker;
 
@@ -42,16 +38,8 @@ public class AddOrdersInPremisesController {
 
     @FXML
     private TextField nameProductPeopleInput;
-
-    @FXML
-    private TextField premisesCollected;
-
     @FXML
     private ComboBox<String> statusOrderComboBox;
-
-    @FXML
-    private TextField timeCollectedInput;
-
     @FXML
     private TextField timeOrderInput;
 
@@ -72,7 +60,6 @@ public class AddOrdersInPremisesController {
          LocalTime horaDeRecogido = null;
          LocalTime horaDeEntrega=null;
          LocalDate fechaDeEntrega=null;
-
          boolean error = false;
          try {
              fechaDeEntrega = dateOrderDatePicker.getValue();

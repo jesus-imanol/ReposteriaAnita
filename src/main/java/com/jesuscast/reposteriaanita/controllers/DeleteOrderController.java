@@ -41,12 +41,12 @@ public class DeleteOrderController {
         if (AppReposteria.getReposteria().cancelarPedido(id)){
             Alert alert=new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Éxito");
-            alert.setContentText("Producto eliminado con éxito");
+            alert.setContentText("Pedido eliminado con éxito");
             alert.showAndWait();
         }else {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Error");
-            alert.setContentText("No existe ningún producto con esta ID");
+            alert.setContentText("No existe ningún pedido con esta ID");
             alert.showAndWait();
         }
         }

@@ -44,22 +44,18 @@ public class AddCupCakeController {
     @FXML
     private TextField stuffedInput;
 
-    @FXML
-    private TextField typeInput;
 
     @FXML
     void onClickAddProduct(MouseEvent event) {
         if (amountInput.getText().trim().isEmpty() ||
                 nameInput.getText().trim().isEmpty() ||
                 priceInput.getText().trim().isEmpty() ||
-                typeInput.getText().trim().isEmpty() || designInput.getText().isEmpty() || stuffedInput.getText().isEmpty()) {
+               designInput.getText().isEmpty() || stuffedInput.getText().isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Se requieren datos");
             alert.setContentText("Por favor complete los campos");
             alert.showAndWait();
-        }
-        //Somer aqui agregaras el producto
-        else {
+        } else {
         String nombre = nameInput.getText();
         String relleno = stuffedInput.getText();
         String desing = designInput.getText();

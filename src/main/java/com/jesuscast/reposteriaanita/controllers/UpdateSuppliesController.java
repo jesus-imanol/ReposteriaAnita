@@ -220,13 +220,13 @@ public class UpdateSuppliesController {
         if (encontrado){
             Alert alert= new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Éxito");
-            alert.setContentText("El producto se ha editado exitosamente");
+            alert.setContentText("El insumo se ha editado exitosamente");
             alert.showAndWait();
         }
         else{
             Alert alert= new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Error");
-            alert.setContentText("Este producto no está dentro de la lista, ingrese uno existente");
+            alert.setContentText("Este insumo no está dentro de la lista, ingrese uno existente");
             alert.showAndWait();
         }
     }

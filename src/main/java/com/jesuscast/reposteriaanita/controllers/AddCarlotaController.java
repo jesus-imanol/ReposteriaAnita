@@ -40,9 +40,6 @@ public class AddCarlotaController {
     @FXML
     private TextField priceInput;
     @FXML
-    private ComboBox<String> sizeComboBox;
-
-    @FXML
     private ComboBox<String> typeComboBox;
 
     @FXML
@@ -50,7 +47,7 @@ public class AddCarlotaController {
         if (amountInput.getText().trim().isEmpty()||
                 nameInput.getText().trim().isEmpty() ||
                 priceInput.getText().trim().isEmpty() ||
-                typeComboBox.getValue().isEmpty() || sizeComboBox.getValue().isEmpty()) {
+                typeComboBox.getValue().isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Se requieren datos");
             alert.setContentText("Por favor complete los campos");
@@ -60,7 +57,6 @@ public class AddCarlotaController {
         else {
            String nombre=nameInput.getText();
            String tipo=typeComboBox.getValue();
-           String size=sizeComboBox.getValue();
            int cantidad;
            double precio;
            try{
@@ -105,7 +101,6 @@ public class AddCarlotaController {
     @FXML
     void initialize() {
         typeComboBox.getItems().addAll("De vaso","Entero(tipo pastel)");
-        sizeComboBox.getItems().addAll("Mediano", "Grande");
         AppReposteria.addValidator(amountInput);
         AppReposteria.addValidator(nameInput);
         AppReposteria.addValidator(priceInput);

@@ -61,17 +61,23 @@ public class AddPostreFrutasController {
           try {
               cantidad = Integer.parseInt(amountInput.getText());
               precio = Double.parseDouble(priceInput.getText());
-              PostreFrutas postreFrutas = new PostreFrutas(nombre,cantidad,precio,size);
-              if (AppReposteria.getReposteria().addPostreFrutas(postreFrutas)){
-                  Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                  alert.setTitle("Exito");
-                  alert.setContentText("Guardado exitosamente");
-                  alert.showAndWait();
-              }
-              else {
+              if (cantidad>=0 && precio>=0) {
+                  PostreFrutas postreFrutas = new PostreFrutas(nombre, cantidad, precio, size);
+                  if (AppReposteria.getReposteria().addPostreFrutas(postreFrutas)) {
+                      Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                      alert.setTitle("Exito");
+                      alert.setContentText("Guardado exitosamente");
+                      alert.showAndWait();
+                  } else {
+                      Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                      alert.setTitle("Error");
+                      alert.setContentText("Ha habido un error al guardar, intente de nuevo, por favor");
+                      alert.showAndWait();
+                  }
+              }else{
                   Alert alert = new Alert(Alert.AlertType.INFORMATION);
                   alert.setTitle("Error");
-                  alert.setContentText("Ha habido un error al guardar, intente de nuevo, por favor");
+                  alert.setContentText("No puede ingresar cantidades negativas");
                   alert.showAndWait();
               }
           }

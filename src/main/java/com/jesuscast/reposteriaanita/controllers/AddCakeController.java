@@ -62,8 +62,7 @@ public class AddCakeController {
             alert.setTitle("Se requieren datos");
             alert.setContentText("Por favor complete los campos");
             alert.showAndWait();
-        }
-        else {
+        } else {
           String nombre = nameInput.getText();
             String relleno=stuffedInput.getText();
             String desing=designInput.getText();

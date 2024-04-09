@@ -102,17 +102,23 @@ public class AddOrdersHomeController {
                error = true;
            }
            if (!error){
-               Pedido pedido = new PedidoADomicilio(nombreCliente,fechaDeEntrega,horaDeEntrega,desingProducto,estatus,nombreProducto,nombreDomicilio,costoEnvio,referencia);
-               if (AppReposteria.getReposteria().addPedido(pedido)){
-                   Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                   alert.setTitle("Exito");
-                   alert.setContentText("Guardado exitosamente");
-                   alert.showAndWait();
-               }
-               else {
+               if (costoEnvio>=0) {
+                   Pedido pedido = new PedidoADomicilio(nombreCliente, fechaDeEntrega, horaDeEntrega, desingProducto, estatus, nombreProducto, nombreDomicilio, costoEnvio, referencia);
+                   if (AppReposteria.getReposteria().addPedido(pedido)) {
+                       Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                       alert.setTitle("Exito");
+                       alert.setContentText("Guardado exitosamente");
+                       alert.showAndWait();
+                   } else {
+                       Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                       alert.setTitle("Error");
+                       alert.setContentText("Ha habido un error al guardar, intente de nuevo, por favor");
+                       alert.showAndWait();
+                   }
+               }else {
                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
                    alert.setTitle("Error");
-                   alert.setContentText("Ha habido un error al guardar, intente de nuevo, por favor");
+                   alert.setContentText("No puede ingresar cantidades negativas");
                    alert.showAndWait();
                }
            }

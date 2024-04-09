@@ -57,33 +57,45 @@ public class AddSuppliesController {
                     case "Kilo":
                     case "Litro":
                        double cantidad=Double.parseDouble(amountInput.getText());
-                        Insumo insumo = new InsumoPorKiloOLitro(nombre,unidadMedida,cantidad);
-                        if (AppReposteria.getReposteria().addInsumo(insumo)){
-                            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                            alert.setTitle("Exito");
-                            alert.setContentText("Guardado exitosamente");
-                            alert.showAndWait();
-                    }
-                        else {
-                            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                            alert.setTitle("Error");
-                            alert.setContentText("Ha habido un error al guardar, intente de nuevo, por favor");
-                            alert.showAndWait();
-                        }
+                       if (cantidad>=0) {
+                           Insumo insumo = new InsumoPorKiloOLitro(nombre, unidadMedida, cantidad);
+                           if (AppReposteria.getReposteria().addInsumo(insumo)) {
+                               Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                               alert.setTitle("Exito");
+                               alert.setContentText("Guardado exitosamente");
+                               alert.showAndWait();
+                           } else {
+                               Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                               alert.setTitle("Error");
+                               alert.setContentText("Ha habido un error al guardar, intente de nuevo, por favor");
+                               alert.showAndWait();
+                           }
+                       }else {
+                           Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                           alert.setTitle("Error");
+                           alert.setContentText("No puede ingresar cantidades negativas");
+                           alert.showAndWait();
+                       }
                         break;
                     case "Unidad":
                         int cantidadUnidad = Integer.parseInt(amountInput.getText());
-                        Insumo insumoUnidad = new InsumosPorUnidad(nombre,unidadMedida, cantidadUnidad);
-                        if (AppReposteria.getReposteria().addInsumo(insumoUnidad)){
-                            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                            alert.setTitle("Exito");
-                            alert.setContentText("Guardado exitosamente");
-                            alert.showAndWait();
-                        }
-                        else {
+                        if (cantidadUnidad>=0) {
+                            Insumo insumoUnidad = new InsumosPorUnidad(nombre, unidadMedida, cantidadUnidad);
+                            if (AppReposteria.getReposteria().addInsumo(insumoUnidad)) {
+                                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                                alert.setTitle("Exito");
+                                alert.setContentText("Guardado exitosamente");
+                                alert.showAndWait();
+                            } else {
+                                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                                alert.setTitle("Error");
+                                alert.setContentText("Ha habido un error al guardar, intente de nuevo, por favor");
+                                alert.showAndWait();
+                            }
+                        }else {
                             Alert alert = new Alert(Alert.AlertType.INFORMATION);
                             alert.setTitle("Error");
-                            alert.setContentText("Ha habido un error al guardar, intente de nuevo, por favor");
+                            alert.setContentText("No puede ingresar cantidades negativas");
                             alert.showAndWait();
                         }
                 }

@@ -64,13 +64,11 @@ public class AddFlanController {
           String size= sizeComboBox.getValue();
           int cantidad;
           double precio;
-          int cantidadPersonas;
           try {
               cantidad=Integer.parseInt(amountInput.getText());
               precio=Double.parseDouble(priceInput.getText());
-              cantidadPersonas=Integer.parseInt(amountPersonInput.getText());
-              if (cantidad >=0 && precio >=0 && cantidadPersonas>=0) {
-                  Flan flan = new Flan(nombre, cantidad, precio, cantidadPersonas, desing, size);
+              if (cantidad >=0 && precio >=0) {
+                  Flan flan = new Flan(nombre, cantidad, precio,desing, size);
                   if (AppReposteria.getReposteria().addFlan(flan)) {
                       Alert alert = new Alert(Alert.AlertType.INFORMATION);
                       alert.setTitle("Exito");
