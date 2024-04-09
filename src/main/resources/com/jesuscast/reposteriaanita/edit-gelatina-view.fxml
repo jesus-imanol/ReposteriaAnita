@@ -66,8 +66,8 @@
       <Button fx:id="editNameBtn" layoutX="460.0" layoutY="183.0" mnemonicParsing="false" onMouseClicked="#onClickEditName" prefHeight="32.0" prefWidth="70.0" styleClass="btns" text="Editar" />
       <Button fx:id="increaseBtn" layoutX="463.0" layoutY="234.0" mnemonicParsing="false" onMouseClicked="#onClickIncrease" prefHeight="32.0" prefWidth="196.0" styleClass="btns" text="Aumentar cantidad" />
       <Button fx:id="priceEditBtn" layoutX="466.0" layoutY="339.0" mnemonicParsing="false" onMouseClicked="#onClickEditPrice" prefHeight="32.0" prefWidth="70.0" styleClass="btns" text="Editar" />
-      <Button fx:id="sizeEditBtn" layoutX="468.0" layoutY="421.0" mnemonicParsing="false" onMouseClicked="#onClickEditStuffed" prefHeight="32.0" prefWidth="70.0" styleClass="btns" text="Editar" />
-      <Button fx:id="typeEditBtn" layoutX="468.0" layoutY="502.0" mnemonicParsing="false" onMouseClicked="#onClickEditDesign" prefHeight="32.0" prefWidth="70.0" styleClass="btns" text="Editar" />
+      <Button fx:id="sizeEditBtn" layoutX="468.0" layoutY="421.0" mnemonicParsing="false" onMouseClicked="#onClickEditSize" prefHeight="32.0" prefWidth="70.0" styleClass="btns" text="Editar" />
+      <Button fx:id="typeEditBtn" layoutX="468.0" layoutY="502.0" mnemonicParsing="false" onMouseClicked="#onClickEditType" prefHeight="32.0" prefWidth="70.0" styleClass="btns" text="Editar" />
       <Button fx:id="decreaseBtn" layoutX="464.0" layoutY="269.0" mnemonicParsing="false" onMouseClicked="#onClickDecrease" prefHeight="32.0" prefWidth="196.0" styleClass="btns" text="Disminuir cantidad" />
       <Label layoutX="43.0" layoutY="400.0" prefHeight="17.0" prefWidth="143.0" text="Tamaño">
          <font>

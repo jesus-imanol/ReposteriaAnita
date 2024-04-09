@@ -123,7 +123,7 @@ public class EditGelatinaController {
     }
 
     @FXML
-    void onClickEditDesign(MouseEvent event) {
+    void onClickEditSize(MouseEvent event) {
         if (typeComboBox.getValue().trim().isEmpty() || idSearchInput.getText().trim().isEmpty()){
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Se requieren datos");
@@ -245,7 +245,7 @@ public class EditGelatinaController {
     }
 
     @FXML
-    void onClickEditStuffed(MouseEvent event) {
+    void onClickEditType(MouseEvent event) {
         if (sizeComboBox.getValue().trim().isEmpty() ||idSearchInput.getText().trim().isEmpty()){
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Se requieren datos");

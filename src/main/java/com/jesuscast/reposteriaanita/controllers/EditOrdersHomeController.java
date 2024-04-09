@@ -45,6 +45,8 @@ public class EditOrdersHomeController {
 
     @FXML
     private TextField shippingCostInput;
+    @FXML
+    private TextField idSearchInput;
 
     @FXML
     private ComboBox<?> statusOrderComboBox;

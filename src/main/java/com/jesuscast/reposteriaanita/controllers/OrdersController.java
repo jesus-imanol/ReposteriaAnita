@@ -36,7 +36,7 @@ public class OrdersController {
 
     @FXML
     void OnClickSeePedido(MouseEvent event) {
-        AppReposteria.newStage("ver-tipos-pedidos-view","Ver tipos de pedidos");
+        AppReposteria.newStage("ver-pedidos-view","Ver todos los pedidos");
     }
 
     @FXML

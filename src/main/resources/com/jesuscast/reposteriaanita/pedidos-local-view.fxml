@@ -44,8 +44,8 @@
       <Button fx:id="exitBtn" layoutX="1112.0" layoutY="622.0" mnemonicParsing="false" onMouseClicked="#onClickExit" prefHeight="61.0" prefWidth="150.0" text="Salir" />
       <TextField fx:id="clienteOrderinput" layoutX="128.0" layoutY="277.0" prefHeight="40.0" prefWidth="342.0" promptText="Ingrese el nombre del cliente" />
       <Label layoutX="136.0" layoutY="257.0" styleClass="labels-input" text="Cliente" />
-      <Label layoutX="131.0" layoutY="343.0" styleClass="labels-input" text="Fecha de pedido" />
-      <Label layoutX="132.0" layoutY="418.0" styleClass="labels-input" text="Hora del pedido" />
+      <Label layoutX="131.0" layoutY="343.0" styleClass="labels-input" text="Fecha de entrega" />
+      <Label layoutX="132.0" layoutY="418.0" styleClass="labels-input" text="Hora de entrega" />
       <Button fx:id="addOrdersBtn" layoutX="941.0" layoutY="621.0" mnemonicParsing="false" onMouseClicked="#onClickAddOrders" prefHeight="61.0" prefWidth="150.0" styleClass="addSuppliesBtn" text="Agregar pedido" />
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="733.0" layoutY="302.0" pickOnBounds="true" preserveRatio="true" />
       <DatePicker fx:id="dateOrderDatePicker" layoutX="130.0" layoutY="365.0" prefHeight="48.0" prefWidth="414.0" />
@@ -56,11 +56,5 @@
       <Label layoutX="132.0" layoutY="572.0" styleClass="labels-input" text="Diseño del producto" />
       <Label layoutX="649.0" layoutY="253.0" styleClass="labels-input" text="Estado" />
       <ComboBox fx:id="statusOrderComboBox" layoutX="642.0" layoutY="272.0" prefHeight="48.0" prefWidth="414.0" promptText="Pendiente" />
-      <Label layoutX="645.0" layoutY="338.0" styleClass="labels-input" text="Hora recogida" />
-      <TextField fx:id="timeCollectedInput" layoutX="640.0" layoutY="359.0" prefHeight="40.0" prefWidth="342.0" />
-      <Label layoutX="646.0" layoutY="411.0" styleClass="labels-input" text="Local recogido" />
-      <TextField fx:id="premisesCollected" layoutX="641.0" layoutY="432.0" prefHeight="40.0" prefWidth="342.0" />
-      <Label layoutX="644.0" layoutY="484.0" styleClass="labels-input" text="Fecha de recogido" />
-      <DatePicker fx:id="dateCollected" layoutX="643.0" layoutY="509.0" prefHeight="48.0" prefWidth="414.0" />
    </children>
 </AnchorPane>

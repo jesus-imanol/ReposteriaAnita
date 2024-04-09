@@ -61,7 +61,7 @@ public class SuperAdminController {
 
     @FXML
     void onClickVentas(MouseEvent event) {
-            AppReposteria.newStage("ventas-view","Ventas");
+        AppReposteria.newStage("ventas-view","Reporte de ventas");
     }
 
     @FXML

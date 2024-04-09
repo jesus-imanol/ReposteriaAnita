@@ -23,9 +23,6 @@ public class EditOrdersInPremisesController {
     private TextField clienteOrderinput;
 
     @FXML
-    private DatePicker dateCollected;
-
-    @FXML
     private DatePicker dateOrderDatePicker;
 
     @FXML
@@ -38,24 +35,16 @@ public class EditOrdersInPremisesController {
     private Button exitBtn;
 
     @FXML
-    private TextField nameProductPeopleInput;
+    private TextField idSearchInput;
 
     @FXML
-    private TextField premisesCollected;
+    private TextField nameProductPeopleInput;
 
     @FXML
     private ComboBox<?> statusOrderComboBox;
 
     @FXML
-    private TextField timeCollectedInput;
-
-    @FXML
     private TextField timeOrderInput;
-
-    @FXML
-    void onClickDateCollected(MouseEvent event) {
-
-    }
 
     @FXML
     void onClickDateOrder(MouseEvent event) {
@@ -73,22 +62,12 @@ public class EditOrdersInPremisesController {
     }
 
     @FXML
-    void onClickEditPremisesCollected(MouseEvent event) {
-
-    }
-
-    @FXML
     void onClickEditProductPeople(MouseEvent event) {
 
     }
 
     @FXML
     void onClickEditStatus(MouseEvent event) {
-
-    }
-
-    @FXML
-    void onClickEditTimeCollected(MouseEvent event) {
 
     }
 
@@ -105,7 +84,6 @@ public class EditOrdersInPremisesController {
 
     @FXML
     void initialize() {
-
     }
 
 }
