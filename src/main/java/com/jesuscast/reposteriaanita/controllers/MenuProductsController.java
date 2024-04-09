@@ -26,7 +26,8 @@ public class MenuProductsController {
 
     @FXML
     private ImageView cupcakeImage;
-
+    @FXML
+    private Button exitBtn;
     @FXML
     private ImageView exitImage;
 

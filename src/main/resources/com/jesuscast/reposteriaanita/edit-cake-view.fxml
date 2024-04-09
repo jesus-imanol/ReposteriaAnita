@@ -70,7 +70,7 @@
             <Image url="@img/salir.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgCentral" fitHeight="463.0" fitWidth="499.0" layoutX="598.0" layoutY="89.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgCentral" fitHeight="341.0" fitWidth="364.0" layoutX="666.0" layoutY="221.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@img/panadera.png" />
          </image>
@@ -82,5 +82,8 @@
       <Button fx:id="amountPersonEditBtn" layoutX="466.0" layoutY="439.0" mnemonicParsing="false" onMouseClicked="#onClickEditAmountPerson" prefHeight="33.0" prefWidth="73.0" styleClass="editar-btn" text="Editar" />
       <Button fx:id="stuffedEditBtn" layoutX="466.0" layoutY="518.0" mnemonicParsing="false" onMouseClicked="#onClickEditStuffed" prefHeight="33.0" prefWidth="73.0" styleClass="editar-btn" text="Editar" />
       <Button fx:id="designEditBtn" layoutX="467.0" layoutY="588.0" mnemonicParsing="false" onMouseClicked="#onClickEditDesign" prefHeight="33.0" prefWidth="73.0" styleClass="editar-btn" text="Editar" />
+      <TextField fx:id="idSearchInput" layoutX="755.0" layoutY="138.0" prefHeight="40.0" prefWidth="378.0" style="-fx-background-color: #C9CCCD; -fx-border-color: black;" />
+      <Label layoutX="757.0" layoutY="107.0" prefHeight="32.0" prefWidth="328.0" text="Ingrese los 3 digitos de la ID para buscar el pastel" />
+      <Button fx:id="searchIDBtn" layoutX="758.0" layoutY="182.0" mnemonicParsing="false" onMouseClicked="#onClickSearch" prefHeight="25.0" prefWidth="83.0" styleClass="editar-btn" text="Buscar" />
    </children>
 </AnchorPane>
