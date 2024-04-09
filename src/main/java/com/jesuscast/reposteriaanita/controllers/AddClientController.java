@@ -2,6 +2,9 @@ package com.jesuscast.reposteriaanita.controllers;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import com.jesuscast.reposteriaanita.AppReposteria;
+import com.jesuscast.reposteriaanita.models.Cliente;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
@@ -42,15 +45,31 @@ public class AddClientController {
         if (nameClientInput.getText().trim().isEmpty()||
                 timeClientInput.getText().trim().isEmpty() ||
                 addressClientInput.getText().trim().isEmpty() ||
-              sexoClientComboBox.getValue() != null) {
+              sexoClientComboBox.getValue() == null) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Se requieren datos");
             alert.setContentText("Por favor complete los campos");
             alert.showAndWait();
         }
         else {
-            //Aqui se agregará el cliente
-            sexoClientComboBox.getValue();
+
+            String nombreCliente=nameClientInput.getText();
+            String tiempoCliente=timeClientInput.getText();
+            String direccion= addClientBtn.getText();
+            String sexo= sexoClientComboBox.getValue();
+
+            Cliente cliente= new Cliente(nombreCliente,tiempoCliente,direccion,sexo);
+            if(AppReposteria.getReposteria().addCliente(cliente)){
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setContentText("Proceso exitoso");
+                alert.showAndWait();
+            }
+            else {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setContentText("Ocurrio un error al agregar");
+                alert.showAndWait();
+            }
+
         }
     }
 

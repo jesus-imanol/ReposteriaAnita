@@ -1,7 +1,9 @@
 package com.jesuscast.reposteriaanita.models;
 
+import java.util.UUID;
+
 public class Cliente {
-    private int id;
+    private String id;
     private String nombre;
     private String direccion;
     private String sexo;
@@ -9,8 +11,8 @@ public class Cliente {
     private boolean status;
     public Cliente(){}
 
-    public Cliente(int id, String nombre, String direccion, String sexo, String tiempoCliente) {
-        this.id = id;
+    public Cliente(String nombre, String direccion, String sexo, String tiempoCliente) {
+        this.id = UUID.randomUUID().toString();
         this.nombre = nombre;
         this.direccion = direccion;
         this.sexo = sexo;
@@ -18,11 +20,11 @@ public class Cliente {
         this.status = true;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -56,5 +58,13 @@ public class Cliente {
 
     public void setTiempoCliente(String tiempoCliente) {
         this.tiempoCliente = tiempoCliente;
+    }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
     }
 }

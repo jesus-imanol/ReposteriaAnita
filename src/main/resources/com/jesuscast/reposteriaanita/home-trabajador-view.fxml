@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1280.0" style="-fx-background-color: #53A7C3;" stylesheets="@styles/styleForHome.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jesuscast.reposteriaanita.controllers.SuperAdminController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1280.0" style="-fx-background-color: #53A7C3;" stylesheets="@styles/styleForHome.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jesuscast.reposteriaanita.controllers.TrabajadorController">
    <children>
       <ImageView fx:id="productosImage" fitHeight="290.0" fitWidth="250.0" layoutX="13.0" layoutY="195.0" onMouseClicked="#onClickProductos" pickOnBounds="true" preserveRatio="true">
          <image>

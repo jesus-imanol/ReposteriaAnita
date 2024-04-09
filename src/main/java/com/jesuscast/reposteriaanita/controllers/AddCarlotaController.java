@@ -44,6 +44,7 @@ public class AddCarlotaController {
 
     @FXML
     void onClickAddProduct(MouseEvent event) {
+        AppReposteria.animateImage(addProductImage);
         if (amountInput.getText().trim().isEmpty()||
                 nameInput.getText().trim().isEmpty() ||
                 priceInput.getText().trim().isEmpty() ||
