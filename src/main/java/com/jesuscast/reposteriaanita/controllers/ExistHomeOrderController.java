@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 
 import com.jesuscast.reposteriaanita.AppReposteria;
 import com.jesuscast.reposteriaanita.models.Pedido;
+import com.jesuscast.reposteriaanita.models.PedidoADomicilio;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
@@ -57,23 +58,32 @@ if (idSearchInput.getText().trim().isEmpty()){
     String id=idSearchInput.getText();
     ArrayList<Pedido> listaPedidos = AppReposteria.getReposteria().getListaPedidos();
     Pedido pedido;
+    boolean hecho=false;
     while (!bandera && index < listaPedidos.size()) {
         if (listaPedidos.get(index).getId().indexOf(id) >= 0&& !listaPedidos.get(index).getStatus().equals("Cancelado") && !listaPedidos.get(index).getStatus().equals("Entregado")) {
             bandera = true;
-            status = "Entregado";
             encontrado = true;
-            listaPedidos.get(index).setStatus(status);
             pedido=AppReposteria.getReposteria().getListaPedidos().get(index);
-            AppReposteria.getReporteVenta().addReporteVenta(pedido);
+            if (pedido instanceof PedidoADomicilio) {
+                status = "Entregado";
+                listaPedidos.get(index).setStatus(status);
+                AppReposteria.getReporteVenta().addReporteVenta(pedido);
+                hecho=true;
+            }else {
+                Alert alert= new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Error");
+                alert.setContentText("Este no es un pedido a domicilio, ingrese un pedido que sí sea a domicilio");
+                alert.showAndWait();
+            }
         }
         index++;
     }
-    if (encontrado){
+    if (encontrado && hecho){
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Éxito");
         alert.setContentText("Reporte de venta realizado con éxito");
         alert.showAndWait();
-    }else {
+    }else if (!encontrado){
         Alert alert= new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Error");
         alert.setContentText("Esta ID no le pertenece a ninún pedido, ingrese uno existente");
