@@ -39,7 +39,7 @@ public class SalesController {
 
     @FXML
     void OnClickSeeVenta(MouseEvent event) {
-
+        AppReposteria.newStage("ventas-ver-pedidos-view","Ver ventas de los pedidos");
     }
 
     @FXML
