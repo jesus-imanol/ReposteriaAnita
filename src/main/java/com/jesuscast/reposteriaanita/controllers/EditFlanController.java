@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import com.jesuscast.reposteriaanita.AppReposteria;
+import com.jesuscast.reposteriaanita.models.Carlota;
 import com.jesuscast.reposteriaanita.models.Cupcake;
 import com.jesuscast.reposteriaanita.models.Flan;
 import javafx.fxml.FXML;
@@ -64,7 +65,7 @@ public class EditFlanController {
     private Button searchIDBtn;
 
     @FXML
-    private ComboBox<?> sizeComboBox;
+    private ComboBox<String> sizeComboBox;
     @FXML
     void onClickEditAmountPeople(MouseEvent event) {
 
@@ -126,22 +127,141 @@ public class EditFlanController {
     }
     @FXML
     void onClickEditDesign(MouseEvent event) {
-
+        if (design.getText().trim().isEmpty() ||idSearchInput.getText().trim().isEmpty()){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Se requieren datos");
+            alert.setContentText("Por favor complete los campos");
+            alert.showAndWait();
+        }else {
+            String id=idSearchInput.getText();
+            boolean encontrado = false;
+            int index = 0;
+            boolean bandera = false;
+            ArrayList<Flan> flans = AppReposteria.getReposteria().getListaProductosFlan();
+            while (!bandera && index < flans.size()) {
+                if (flans.get(index).getId().indexOf(id) >= 0 && flans.get(index).isStatus()) {
+                    bandera = true;
+                    encontrado=true;
+                   String desing = designInput.getText();
+                   AppReposteria.getReposteria().getListaProductosFlan().get(index).setDesing(desing);
+                }
+                index++;
+            }
+            if (!encontrado){
+                Alert alert= new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Error");
+                alert.setContentText("Esta ID no está dentro de la lista de flans, ingrese uno existente");
+                alert.showAndWait();
+            }
+        }
     }
 
     @FXML
     void onClickEditName(MouseEvent event) {
-
+        if (nameInput.getText().trim().isEmpty() ||idSearchInput.getText().trim().isEmpty()){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Se requieren datos");
+            alert.setContentText("Por favor complete los campos");
+            alert.showAndWait();
+        }else {
+            String id=idSearchInput.getText();
+            boolean encontrado = false;
+            int index = 0;
+            boolean bandera = false;
+            ArrayList<Flan> flans = AppReposteria.getReposteria().getListaProductosFlan();
+            while (!bandera && index < flans.size()) {
+                if (flans.get(index).getId().indexOf(id) >= 0 && flans.get(index).isStatus()) {
+                    bandera = true;
+                    encontrado=true;
+                    String name = nameInput.getText();
+                    AppReposteria.getReposteria().getListaProductosFlan().get(index).setNombreProducto(name);
+                }
+                index++;
+            }
+            if (!encontrado){
+                Alert alert= new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Error");
+                alert.setContentText("Esta ID no está dentro de la lista de flans, ingrese uno existente");
+                alert.showAndWait();
+            }
+        }
     }
 
     @FXML
     void onClickEditPrice(MouseEvent event) {
-
+        if (nameInput.getText().trim().isEmpty() ||idSearchInput.getText().trim().isEmpty()){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Se requieren datos");
+            alert.setContentText("Por favor complete los campos");
+            alert.showAndWait();
+        }else {
+            String id=idSearchInput.getText();
+            boolean encontrado = false;
+            int index = 0;
+            boolean bandera = false;
+            ArrayList<Flan> flans = AppReposteria.getReposteria().getListaProductosFlan();
+            while (!bandera && index < flans.size()) {
+                if (flans.get(index).getId().indexOf(id) >= 0 && flans.get(index).isStatus()) {
+                    bandera = true;
+                    encontrado=true;
+                    double precio;
+                    try {
+                        precio=Double.parseDouble(priceInput.getText());
+                        if (precio>=0){
+                            AppReposteria.getReposteria().getListaProductosFlan().get(index).setPrecio(precio);
+                        }else {
+                            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                            alert.setTitle("Error");
+                            alert.setContentText("No puede ingresar cantidades negativas");
+                            alert.showAndWait();
+                        }
+                    }catch (Exception e){
+                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                        alert.setTitle("Error");
+                        alert.setContentText("Error al guardar datos, ingrese solo valores númericos"+e.getMessage());
+                        alert.showAndWait();
+                    }
+                }
+                index++;
+            }
+            if (!encontrado){
+                Alert alert= new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Error");
+                alert.setContentText("Esta ID no está dentro de la lista de flans, ingrese uno existente");
+                alert.showAndWait();
+            }
+        }
     }
 
     @FXML
     void onClickEditSize(MouseEvent event) {
-
+        if (sizeComboBox.getValue().trim().isEmpty() ||idSearchInput.getText().trim().isEmpty()){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Se requieren datos");
+            alert.setContentText("Por favor complete los campos");
+            alert.showAndWait();
+        }else {
+            String id=idSearchInput.getText();
+            boolean encontrado = false;
+            int index = 0;
+            boolean bandera = false;
+            ArrayList<Flan> flans = AppReposteria.getReposteria().getListaProductosFlan();
+            while (!bandera && index < flans.size()) {
+                if (flans.get(index).getId().indexOf(id) >= 0 && flans.get(index).isStatus()) {
+                    bandera = true;
+                    encontrado=true;
+                    String size =sizeComboBox.getValue();
+                    AppReposteria.getReposteria().getListaProductosFlan().get(index).setSize(size);
+                }
+                index++;
+            }
+            if (!encontrado){
+                Alert alert= new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Error");
+                alert.setContentText("Esta ID no está dentro de la lista de flans, ingrese uno existente");
+                alert.showAndWait();
+            }
+        }
     }
 
     @FXML
@@ -152,7 +272,54 @@ public class EditFlanController {
 
     @FXML
     void onClickIncrease(MouseEvent event) {
-
+        if (amountInput.getText().trim().isEmpty() ||idSearchInput.getText().trim().isEmpty()){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Se requieren datos");
+            alert.setContentText("Por favor complete los campos");
+            alert.showAndWait();
+        }else {
+            String id=idSearchInput.getText();
+            boolean encontrado = false;
+            int index = 0;
+            boolean bandera = false;
+            ArrayList<Flan> flans = AppReposteria.getReposteria().getListaProductosFlan();
+            while (!bandera && index < flans.size()) {
+                if (flans.get(index).getId().indexOf(id) >= 0 && flans.get(index).isStatus()) {
+                    bandera = true;
+                    encontrado=true;
+                    int cantidad;
+                    try {
+                        cantidad=Integer.parseInt(amountInput.getText());
+                        if (cantidad>=0) {
+                            AppReposteria.getReposteria().getListaProductosFlan().get(index).sumarCantidad(cantidad);
+                        }else {
+                            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                            alert.setTitle("Error");
+                            alert.setContentText("No puede ingresar cantidades negativas");
+                            alert.showAndWait();
+                        }
+                    }catch (Exception e){
+                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                        alert.setTitle("Error");
+                        alert.setContentText("Error al guardar datos, ingrese solo valores númericos"+e.getMessage());
+                        alert.showAndWait();
+                    }
+                }
+                index++;
+            }
+            if (encontrado){
+                Alert alert= new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Éxito");
+                alert.setContentText("El flan se ha editado exitosamente");
+                alert.showAndWait();
+            }
+            else{
+                Alert alert= new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Error");
+                alert.setContentText("Esta ID no está dentro de la lista de flans, ingrese uno existente");
+                alert.showAndWait();
+            }
+        }
     }
 
     @FXML
@@ -162,7 +329,7 @@ public class EditFlanController {
 
     @FXML
     void initialize() {
-
+           sizeComboBox.getItems().addAll("Mediano", "Grande");
     }
 
 }

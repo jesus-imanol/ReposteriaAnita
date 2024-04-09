@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import com.jesuscast.reposteriaanita.AppReposteria;
+import com.jesuscast.reposteriaanita.models.Carlota;
 import com.jesuscast.reposteriaanita.models.Cupcake;
 import com.jesuscast.reposteriaanita.models.Pastel;
 import javafx.fxml.FXML;
@@ -253,17 +254,6 @@ public class EditCupCakeController {
 
     @FXML
     void onClickEditSuffed(MouseEvent event) {
-
-    }
-
-    @FXML
-    void onClickExit(MouseEvent event) {
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.close();
-    }
-
-    @FXML
-    void onClickIncrease(MouseEvent event) {
         if (stuffedInput.getText().trim().isEmpty() || idSearchInput.getText().trim().isEmpty()){
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Se requieren datos");
@@ -281,6 +271,64 @@ public class EditCupCakeController {
                     encontrado=true;
                     String relleno = stuffedInput.getText();
                     AppReposteria.getReposteria().getListaProductosCupcake().get(index).setRelleno(relleno);
+                }
+                index++;
+            }
+            if (encontrado){
+                Alert alert= new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Éxito");
+                alert.setContentText("El cupcake se ha editado exitosamente");
+                alert.showAndWait();
+            }
+            else{
+                Alert alert= new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Error");
+                alert.setContentText("Esta ID no está dentro de la lista de cupcakes, ingrese uno existente");
+                alert.showAndWait();
+            }
+        }
+    }
+
+    @FXML
+    void onClickExit(MouseEvent event) {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.close();
+    }
+
+    @FXML
+    void onClickIncrease(MouseEvent event) {
+        if (amountInput.getText().trim().isEmpty() ||idSearchInput.getText().trim().isEmpty()){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Se requieren datos");
+            alert.setContentText("Por favor complete los campos");
+            alert.showAndWait();
+        }else {
+            String id=idSearchInput.getText();
+            boolean encontrado = false;
+            int index = 0;
+            boolean bandera = false;
+            ArrayList<Cupcake> cupcakes = AppReposteria.getReposteria().getListaProductosCupcake();
+            while (!bandera && index < cupcakes.size()) {
+                if (cupcakes.get(index).getId().indexOf(id) >= 0 && cupcakes.get(index).isStatus()) {
+                    bandera = true;
+                    encontrado=true;
+                    int cantidad;
+                    try {
+                        cantidad=Integer.parseInt(amountInput.getText());
+                        if (cantidad>=0) {
+                            AppReposteria.getReposteria().getListaProductosCupcake().get(index).sumarCantidad(cantidad);
+                        }else {
+                            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                            alert.setTitle("Error");
+                            alert.setContentText("No puede ingresar cantidades negativas");
+                            alert.showAndWait();
+                        }
+                    }catch (Exception e){
+                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                        alert.setTitle("Error");
+                        alert.setContentText("Error al guardar datos, ingrese solo valores númericos"+e.getMessage());
+                        alert.showAndWait();
+                    }
                 }
                 index++;
             }
