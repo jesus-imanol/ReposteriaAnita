@@ -8,6 +8,7 @@ import com.jesuscast.reposteriaanita.models.Gelatina;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -35,6 +36,12 @@ public class AddGelatinaController {
 
     @FXML
     private TextField priceInput;
+    //nuevos combos box
+    @FXML
+    private ComboBox<?> sizeComboBox;
+
+    @FXML
+    private ComboBox<?> typeComboBox;
 
     @FXML
     private TextField sizeInput;
@@ -102,9 +109,7 @@ public class AddGelatinaController {
     @FXML
     void initialize() {
         AppReposteria.addValidator(amountInput);
-        AppReposteria.addValidator(typeInput);
         AppReposteria.addValidator(nameInput);
-        AppReposteria.addValidator(sizeInput);
         AppReposteria.addValidator(priceInput);
     }
 

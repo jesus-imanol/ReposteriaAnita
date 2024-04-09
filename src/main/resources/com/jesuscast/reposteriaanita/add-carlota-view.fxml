@@ -62,7 +62,6 @@
          </font>
       </Label>
       <TextField fx:id="nameInput" layoutX="38.0" layoutY="180.0" prefHeight="50.0" prefWidth="400.0" style="-fx-background-color: #C9CCCD; -fx-border-color: black;" />
-      <TextField fx:id="sizeInput" layoutX="42.0" layoutY="394.0" prefHeight="50.0" prefWidth="400.0" style="-fx-background-color: #C9CCCD; -fx-border-color: black;" />
       <Label layoutX="43.0" layoutY="379.0" prefHeight="17.0" prefWidth="143.0" text="Tamaño">
          <font>
             <Font name="Montserrat Regular" size="12.0" />
@@ -79,5 +78,6 @@
          </image>
       </ImageView>
       <ComboBox fx:id="typeComboBox" layoutX="40.0" layoutY="322.0" prefHeight="50.0" prefWidth="400.0" style="-fx-background-color: #C9CCCD; -fx-border-color: black;" />
+      <ComboBox fx:id="sizeComboBox" layoutX="39.0" layoutY="400.0" prefHeight="50.0" prefWidth="400.0" style="-fx-background-color: #C9CCCD; -fx-border-color: black;" />
    </children>
 </AnchorPane>

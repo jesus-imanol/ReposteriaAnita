@@ -46,7 +46,11 @@ public class EditCakeController {
     private Button increaseEditBtn;
 
     @FXML
+    private TextField idSearchInput;
+    @FXML
     private Button nameEditBtn;
+    @FXML
+    private Button searchIDBtn;
 
     @FXML
     private TextField nameInput;
@@ -103,6 +107,10 @@ public class EditCakeController {
 
     @FXML
     void onClickIncrease(MouseEvent event) {
+
+    }
+    @FXML
+    void onClickSearch(MouseEvent event) {
 
     }
 

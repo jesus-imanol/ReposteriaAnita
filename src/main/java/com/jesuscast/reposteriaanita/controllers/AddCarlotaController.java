@@ -44,6 +44,9 @@ public class AddCarlotaController {
     private TextField sizeInput;
 
     @FXML
+    private ComboBox<?> sizeComboBox;
+
+    @FXML
     private ComboBox<String> typeComboBox;
 
     @FXML

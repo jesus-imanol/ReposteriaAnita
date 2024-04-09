@@ -8,6 +8,7 @@ import com.jesuscast.reposteriaanita.models.PostreFrutas;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -36,7 +37,9 @@ public class AddPostreFrutasController {
 
     @FXML
     private TextField priceInput;
-
+        //Somer este el combo boxxxxxxxxxxxx de tamaño
+    @FXML
+    private ComboBox<?> sizeComboBox;
     @FXML
     private TextField sizeInput;
 
@@ -92,7 +95,6 @@ public class AddPostreFrutasController {
     @FXML
     void initialize() {
         AppReposteria.addValidator(amountInput);
-        AppReposteria.addValidator(sizeInput);
         AppReposteria.addValidator(nameInput);
         AppReposteria.addValidator(priceInput);
     }

@@ -5,12 +5,13 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-public class EditCupCakeController {
+public class EditFlanController {
 
     @FXML
     private ResourceBundle resources;
@@ -19,22 +20,28 @@ public class EditCupCakeController {
     private URL location;
 
     @FXML
-    private ImageView addProductImage;
+    private TextField amountInput;
 
     @FXML
-    private TextField amountInput;
+    private Button amountPeopleEditBtn;
+
+    @FXML
+    private TextField amountPersonInput;
 
     @FXML
     private Button decreaseBtn;
 
     @FXML
-    private Button designEditBtn;
+    private Button design;
 
     @FXML
     private TextField designInput;
 
     @FXML
     private Button editNameBtn;
+
+    @FXML
+    private Button editSize;
 
     @FXML
     private ImageView exitImage;
@@ -58,18 +65,15 @@ public class EditCupCakeController {
     private Button searchIDBtn;
 
     @FXML
-    private Button stuffedEditBtn;
+    private ComboBox<?> sizeComboBox;
 
     @FXML
-    private TextField stuffedInput;
-
-    @FXML
-    void onClickAddProduct(MouseEvent event) {
+    void onClickDecrease(MouseEvent event) {
 
     }
 
     @FXML
-    void onClickDecrease(MouseEvent event) {
+    void onClickEditAmountPeople(MouseEvent event) {
 
     }
 
@@ -89,7 +93,7 @@ public class EditCupCakeController {
     }
 
     @FXML
-    void onClickEditSuffed(MouseEvent event) {
+    void onClickEditSize(MouseEvent event) {
 
     }
 

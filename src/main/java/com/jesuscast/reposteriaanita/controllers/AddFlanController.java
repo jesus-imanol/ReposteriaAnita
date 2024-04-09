@@ -8,6 +8,7 @@ import com.jesuscast.reposteriaanita.models.Flan;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -35,7 +36,9 @@ public class AddFlanController {
 
     @FXML
     private ImageView exitImage;
-
+    //Este es para el tamaño del flan
+    @FXML
+    private ComboBox<?> sizeComboBox;
 
     @FXML
     private TextField nameInput;
