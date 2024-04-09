@@ -7,11 +7,13 @@ import com.jesuscast.reposteriaanita.AppReposteria;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-public class ClientController {
+public class DeleteClientController {
 
     @FXML
     private ResourceBundle resources;
@@ -20,33 +22,25 @@ public class ClientController {
     private URL location;
 
     @FXML
-    private ImageView addClientImage;
+    private ImageView decorationImg;
 
     @FXML
-    private ImageView deleteClientImage;
+    private Button deleteClientBtn;
 
     @FXML
     private Button exitBtn;
 
     @FXML
-    private ImageView seeClientImage;
+    private TextField idSearchInput;
 
     @FXML
-    private ImageView updateClientImage;
+    private Label titulo1;
 
     @FXML
-    void OnClickSeeClient(MouseEvent event) {
-        AppReposteria.newStage("see-client-view","Ver cliente");
-    }
-
-    @FXML
-    void onClickAddClient(MouseEvent event) {
-        AppReposteria.newStage("add-client-view","Agregar cliente");
-    }
+    private Label titulo2;
 
     @FXML
     void onClickDeleteClient(MouseEvent event) {
-        AppReposteria.newStage("delete-client-view","Eliminar cliente");
 
     }
 
@@ -54,11 +48,6 @@ public class ClientController {
     void onClickExit(MouseEvent event) {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.close();
-    }
-
-    @FXML
-    void onClickUpdateClient(MouseEvent event) {
-
     }
 
     @FXML

@@ -5,8 +5,10 @@ import java.util.ResourceBundle;
 
 import com.jesuscast.reposteriaanita.AppReposteria;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 public class SuperAdminController {
 
@@ -53,7 +55,8 @@ public class SuperAdminController {
 
     @FXML
     void onClickSalir(MouseEvent event) {
-        System.exit(1);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.close();
     }
 
     @FXML
