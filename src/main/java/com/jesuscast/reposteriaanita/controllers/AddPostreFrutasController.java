@@ -39,16 +39,14 @@ public class AddPostreFrutasController {
     private TextField priceInput;
         //Somer este el combo boxxxxxxxxxxxx de tamaño
     @FXML
-    private ComboBox<?> sizeComboBox;
-    @FXML
-    private TextField sizeInput;
+    private ComboBox<String> sizeComboBox;
 
     @FXML
     void onClickAddProduct(MouseEvent event) {
         if (amountInput.getText().trim().isEmpty() ||
                 nameInput.getText().trim().isEmpty() ||
                 priceInput.getText().trim().isEmpty() ||
-                sizeInput.getText().isEmpty()) {
+                sizeComboBox.getValue().isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Se requieren datos");
             alert.setContentText("Por favor complete los campos");
@@ -57,7 +55,7 @@ public class AddPostreFrutasController {
         //Somer aqui agregaras el producto
         else {
           String nombre = nameInput.getText();
-          String size = sizeInput.getText();
+          String size = sizeComboBox.getValue();
           int cantidad;
           double precio;
           try {
@@ -94,6 +92,8 @@ public class AddPostreFrutasController {
 
     @FXML
     void initialize() {
+        sizeComboBox.getItems().addAll("Mediano", "Grande");
+
         AppReposteria.addValidator(amountInput);
         AppReposteria.addValidator(nameInput);
         AppReposteria.addValidator(priceInput);

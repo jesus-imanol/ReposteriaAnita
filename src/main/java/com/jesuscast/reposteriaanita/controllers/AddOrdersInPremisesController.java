@@ -57,7 +57,7 @@ public class AddOrdersInPremisesController {
 
     @FXML
     void onClickAddOrders(MouseEvent event) {
-     if (clienteOrderinput.getText().trim().isEmpty() || dateCollected.getValue()==null ||dateOrderDatePicker.getValue()==null ||designProduct.getText().trim().isEmpty() ||nameProductPeopleInput.getText().trim().isEmpty() ||premisesCollected.getText().trim().isEmpty() ||statusOrderComboBox.getValue().trim().isEmpty() || timeCollectedInput.getText().trim().isEmpty() ||timeOrderInput.getText().trim().isEmpty()){
+     if (clienteOrderinput.getText().trim().isEmpty() ||dateOrderDatePicker.getValue()==null ||designProduct.getText().trim().isEmpty() ||nameProductPeopleInput.getText().trim().isEmpty() ||statusOrderComboBox.getValue().trim().isEmpty() ||timeOrderInput.getText().trim().isEmpty()){
          Alert alert = new Alert(Alert.AlertType.INFORMATION);
          alert.setTitle("Se requieren datos");
          alert.setContentText("Por favor complete los campos");

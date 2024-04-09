@@ -128,7 +128,7 @@ public class Reposteria {
                 boolean bandera = false;
                 int index = 0;
                 while (!bandera && index < listaProductosPostreFrutas.size()) {
-                        if (listaProductosPostreFrutas.get(index).getId().indexOf(id) >= 0 ) {
+                        if (listaProductosPostreFrutas.get(index).getId().indexOf(id) >= 0 && listaProductosPostreFrutas.get(index).isStatus()){
                                  bandera = true;
                                  status = false;
                                  encontrado=true;
@@ -138,7 +138,7 @@ public class Reposteria {
                 }
                 index=0;
                 while (!bandera && index < listaProductosCupcake.size()) {
-                        if (listaProductosCupcake.get(index).getId().indexOf(id) >= 0 ) {
+                        if (listaProductosCupcake.get(index).getId().indexOf(id) >= 0 && listaProductosCupcake.get(index).isStatus()) {
                                 bandera = true;
                                 status = false;
                                 encontrado=true;
@@ -148,7 +148,7 @@ public class Reposteria {
                 }
                 index = 0;
                 while (!bandera && index < listaProductosCarlota.size()) {
-                        if (listaProductosCarlota.get(index).getId().indexOf(id) >= 0 ) {
+                        if (listaProductosCarlota.get(index).getId().indexOf(id) >= 0 && listaProductosCarlota.get(index).isStatus()) {
                                 bandera = true;
                                 status = false;
                                 encontrado=true;
@@ -158,7 +158,7 @@ public class Reposteria {
                 }
                 index=0;
                 while (!bandera && index < listaProductosFlan.size()) {
-                        if (listaProductosFlan.get(index).getId().indexOf(id) >= 0 ) {
+                        if (listaProductosFlan.get(index).getId().indexOf(id) >= 0 && listaProductosFlan.get(index).isStatus()) {
                                 bandera = true;
                                 status = false;
                                 encontrado=true;
@@ -168,7 +168,7 @@ public class Reposteria {
                 }
                 index =0;
                 while (!bandera && index < listaProductosPastel.size()) {
-                        if (listaProductosPastel.get(index).getId().indexOf(id) >= 0 ) {
+                        if (listaProductosPastel.get(index).getId().indexOf(id) >= 0 && listaProductosPastel.get(index).isStatus()) {
                                 bandera = true;
                                 status = false;
                                 encontrado=true;
@@ -178,7 +178,7 @@ public class Reposteria {
                 }
                 index=0;
                 while (!bandera && index < listaProductosGelatina.size()) {
-                        if (listaProductosGelatina.get(index).getId().indexOf(id) >= 0 ) {
+                        if (listaProductosGelatina.get(index).getId().indexOf(id) >= 0 && listaProductosGelatina.get(index).isStatus()) {
                                 bandera = true;
                                 status = false;
                                 encontrado=true;
@@ -194,7 +194,7 @@ public class Reposteria {
                 int index = 0;
                 boolean bandera = false;
                 while (!bandera && index < listaInsumos.size()) {
-                        if (listaInsumos.get(index).getId().indexOf(id) >= 0) {
+                        if (listaInsumos.get(index).getId().indexOf(id) >= 0 && listaInsumos.get(index).isStatus()) {
                                 bandera = true;
                                 status = false;
                                 encontrado = true;
@@ -210,7 +210,7 @@ public class Reposteria {
                 do {
                  cambios=false;
                  for (int i = 0; i<listaPedidos.size()-1;i++){
-                         if (listaPedidos.get(i).getFechaDeEntrega().isAfter(listaPedidos.get(i+1).getFechaDeEntrega())){
+                         if (listaPedidos.get(i).getFechaDeEntrega().isAfter(listaPedidos.get(i+1).getFechaDeEntrega()) ){
                                  pedidoTemporal=listaPedidos.get(i);
                                  listaPedidos.set(i,listaPedidos.get(i+1));
                                  listaPedidos.set(i+1,pedidoTemporal);
@@ -218,5 +218,22 @@ public class Reposteria {
                          }
                  }
                 }while (cambios);
+        }
+
+        public boolean cancelarPedido(String id){
+                boolean encontrado = false;
+                String status;
+                int index = 0;
+                boolean bandera = false;
+                while (!bandera && index < listaPedidos.size()) {
+                        if (listaPedidos.get(index).getId().indexOf(id) >= 0&& !listaPedidos.get(index).getStatus().equals("Cancelado")) {
+                                bandera = true;
+                                status = "Cancelado";
+                                encontrado = true;
+                                listaPedidos.get(index).setStatus(status);
+                        }
+                        index++;
+                }
+                return encontrado;
         }
 }

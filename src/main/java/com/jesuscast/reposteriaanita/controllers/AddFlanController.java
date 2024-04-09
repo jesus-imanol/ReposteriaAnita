@@ -38,7 +38,7 @@ public class AddFlanController {
     private ImageView exitImage;
     //Este es para el tamaño del flan
     @FXML
-    private ComboBox<?> sizeComboBox;
+    private ComboBox<String> sizeComboBox;
 
     @FXML
     private TextField nameInput;
@@ -51,7 +51,7 @@ public class AddFlanController {
         if (amountInput.getText().trim().isEmpty() ||
                 nameInput.getText().trim().isEmpty() ||
                 priceInput.getText().trim().isEmpty() || designInput.getText().isEmpty() ||
-                amountPersonInput.getText().isEmpty()) {
+                amountPersonInput.getText().isEmpty() || sizeComboBox.getValue().trim().isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Se requieren datos");
             alert.setContentText("Por favor complete los campos");
@@ -61,7 +61,7 @@ public class AddFlanController {
         else {
           String nombre=nameInput.getText();
           String desing = designInput.getText();
-          String size= "En espera";
+          String size= sizeComboBox.getValue();
           int cantidad;
           double precio;
           int cantidadPersonas;
@@ -106,6 +106,7 @@ public class AddFlanController {
 
     @FXML
     void initialize() {
+        sizeComboBox.getItems().addAll("Mediano", "Grande");
         AppReposteria.addValidator(amountInput);
         AppReposteria.addValidator(amountPersonInput);
         AppReposteria.addValidator(designInput);

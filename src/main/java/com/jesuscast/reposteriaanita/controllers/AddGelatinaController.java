@@ -38,24 +38,18 @@ public class AddGelatinaController {
     private TextField priceInput;
     //nuevos combos box
     @FXML
-    private ComboBox<?> sizeComboBox;
+    private ComboBox<String> sizeComboBox;
 
     @FXML
-    private ComboBox<?> typeComboBox;
-
-    @FXML
-    private TextField sizeInput;
-
-    @FXML
-    private TextField typeInput;
+    private ComboBox<String> typeComboBox;
 
     @FXML
     void onClickAddProduct(MouseEvent event) {
         if (amountInput.getText().trim().isEmpty() ||
                 nameInput.getText().trim().isEmpty() ||
                 priceInput.getText().trim().isEmpty() ||
-                typeInput.getText().trim().isEmpty() ||
-                sizeInput.getText().isEmpty()) {
+                sizeComboBox.getValue().trim().isEmpty() ||
+                typeComboBox.getValue().isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Se requieren datos");
             alert.setContentText("Por favor complete los campos");
@@ -64,8 +58,8 @@ public class AddGelatinaController {
         //Somer aqui agregaras el producto
         else {
             String nombre = nameInput.getText();
-            String size = sizeInput.getText();
-            String sabor = typeInput.getText();
+            String size = sizeComboBox.getValue();
+            String sabor = typeComboBox.getValue();
             int cantidad;
             double precio;
             try{
@@ -108,6 +102,8 @@ public class AddGelatinaController {
 
     @FXML
     void initialize() {
+        sizeComboBox.getItems().addAll("Mediano", "Grande");
+        typeComboBox.getItems().addAll("De vaso", "Completa(tipo pastel)");
         AppReposteria.addValidator(amountInput);
         AppReposteria.addValidator(nameInput);
         AppReposteria.addValidator(priceInput);
