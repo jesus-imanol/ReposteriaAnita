@@ -8,6 +8,7 @@ import java.util.ResourceBundle;
 
 import com.jesuscast.reposteriaanita.AppReposteria;
 import com.jesuscast.reposteriaanita.models.Pedido;
+import com.jesuscast.reposteriaanita.models.PedidoEnLocal;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.*;
@@ -65,10 +66,10 @@ public class ExistOrderController {
             ArrayList<Pedido> listaPedidos = AppReposteria.getReposteria().getListaPedidos();
             while (!bandera && index < listaPedidos.size()) {
                 if (listaPedidos.get(index).getId().indexOf(id) >= 0&& !listaPedidos.get(index).getStatus().equals("Cancelado") && !listaPedidos.get(index).getStatus().equals("Entregado")) {
-                    String localDeEntrega = premisesCollectedInput.getText();
+                    String localRecogido = premisesCollectedInput.getText();
                     boolean error = false;
-                    LocalDate fechaDeRecogido;
-                    LocalTime horaDeRecogido;
+                    LocalDate fechaDeRecogido=null;
+                    LocalTime horaDeRecogido=null;
                     try {
                         fechaDeRecogido=dateCollectedDatePicker.getValue();
                     }catch (Exception e){
@@ -86,6 +87,23 @@ public class ExistOrderController {
                         alert.setContentText("Ingrese la hora correctamente: hh:mm:ss(segundos opcionales)"+e.getMessage());
                         alert.showAndWait();
                         error = true;
+                    }
+                    if (!error){
+                        Pedido pedido = AppReposteria.getReposteria().getListaPedidos().get(index);
+                        if (pedido instanceof PedidoEnLocal){
+                            String estatus="Entregado";
+                            ((PedidoEnLocal) pedido).setFechaRecogido(fechaDeRecogido);
+                            ((PedidoEnLocal) pedido).setHoraRecogido(horaDeRecogido);
+                            ((PedidoEnLocal) pedido).setLocalRecogido(localRecogido);
+                            pedido.setStatus(estatus);
+                            AppReposteria.getReposteria().getListaPedidos().set(index,pedido);
+                            AppReposteria.getReporteVenta().addReporteVenta(pedido);
+                        }else {
+                            Alert alert= new Alert(Alert.AlertType.INFORMATION);
+                            alert.setTitle("Error");
+                            alert.setContentText("Este no es un pedido desde el local, ingrese un pedido que sí sea a domicilio");
+                            alert.showAndWait();
+                        }
                     }
                     bandera = true;
                 }
